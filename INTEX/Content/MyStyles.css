@@ -1,0 +1,28 @@
+﻿body {
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main-content {
+    width: 60%;
+    float: left;
+    background: teal;
+}
+
+.aside {
+    width: 40%;
+    float: left;
+}
+
+.wrapper, html, body {
+    height: 100%;
+}
+
+.HeaderImg {
+    width: 350px;
+    height:auto;
+}
