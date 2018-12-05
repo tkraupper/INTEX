@@ -12,12 +12,17 @@ namespace INTEX.Controllers
     {
         public IntexContext db = new IntexContext();
 
-        public static int currentEmployee;
+        public static int currentEmployee = -1;
 
-        // GET: Employee
+        // HOME PAGE
         public ActionResult Index()
         {
-            return View();
+            if (currentEmployee == -1)
+            {
+                return RedirectToAction("Login");
+            }
+            EmployeeCredentials employee = db.EmployeeCredential.Find(currentEmployee);
+            return View(employee);
         }
 
         //LOGIN METHODS FOR THE SEATTLE EMPLOYEES
@@ -41,6 +46,15 @@ namespace INTEX.Controllers
             }
             return View("Login");
 
+        }
+
+
+
+        // BASIC QUOTE RESPONSE PAGE
+        [HttpGet]
+        public ActionResult Quote(int requestid)
+        {
+            return View();
         }
     }
 }

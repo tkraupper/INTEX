@@ -26,7 +26,7 @@ namespace INTEX.Models
         public int TestID { get; set; }
 
         [DisplayName("Actual Cost")]
-        public double ActualCost { get; set; }
+        public decimal ActualCost { get; set; }
 
         [DisplayName("Test Date Time")]
         public string TestDateTime { get; set; }
@@ -34,6 +34,6 @@ namespace INTEX.Models
         [DisplayName("Status")]
         public string TestStatus { get; set; }
 
-        public int Predecessor { get; set; }
+        public int? Predecessor { get; set; }
     }
 }

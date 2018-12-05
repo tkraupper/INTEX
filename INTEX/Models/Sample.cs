@@ -29,19 +29,19 @@ namespace INTEX.Models
         public virtual Assay Assay { get; set; }
 
         [DisplayName("Indicated Weight")]
-        public float IndicatedWeight { get; set; }
+        public double? /*float*/ IndicatedWeight { get; set; }
 
         [DisplayName("Actual Weight")]
-        public float ActualWeight { get; set; }
+        public double? /*float*/ ActualWeight { get; set; }
 
         [DisplayName("Quantity")]
-        public float QuantityInMilligrams { get; set; }
+        public double? /*float*/ QuantityInMilligrams { get; set; }
 
         [DisplayName("Date Arrived")]
         public string DateArrived { get; set; }
 
         [DisplayName("Received By")]
-        public string ReceivedBy { get; set; }
+        public string RecievedBy { get; set; }
 
         [DisplayName("Date Due")]
         public string DateDue { get; set; }
@@ -49,10 +49,10 @@ namespace INTEX.Models
         public string Appearance { get; set; }
 
         [DisplayName("Molecular Mass")]
-        public float MolecularMass { get; set; }
+        public double? /*float*/ MolecularMass { get; set; }
 
         [DisplayName("Maximum Tolerated Dose")]
-        public float MTD { get; set; }
+        public double? /*float*/ MTD { get; set; }
 
         [DisplayName("Secondary Testing Approval")]
         public bool SecondaryTestingApproval { get; set; }
