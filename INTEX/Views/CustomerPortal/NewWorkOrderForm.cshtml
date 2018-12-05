@@ -1,0 +1,99 @@
+﻿@model INTEX.Models.WorkOrder
+
+
+@{
+    ViewBag.Title = "New Work Order Form";
+}
+
+<style>
+    /* Tooltip container */
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+    }
+
+        /* Tooltip text */
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            /* Position the tooltip text - see examples below! */
+            position: absolute;
+            z-index: 1;
+        }
+
+        /* Show the tooltip text when you mouse over the tooltip container */
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+</style>
+
+<h2>New Work Order Form</h2>
+<br />
+
+<div class="card">
+    <div class="card-body" style="background-color: #f8f9fa">
+        <p>Please verify the information below is correct and add remaining information to form before submitting.</p>
+    </div>
+</div>
+<br />
+<div class="jumbotron">
+    @*What we should already have in our db*@
+    <p>QuoteID:</p>
+    <p>CustomerID:</p>
+    <p>Confirmation Sent Date:</p>
+    <p>Description:</p>
+
+
+    @*Reference code for attaching model to populate the work order fields we have before the customer submits
+            <div>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.CustomerCredentials.Username)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CustomerCredentials.Username)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CustomerCredentials.Password)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CustomerCredentials.Password)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Customer.ContactID)
+                </dt>
+
+                <dt>
+                    @Html.DisplayFor(model => model.Customer.ContactID)
+                </dt>
+
+            </dl>
+        </div>*@
+
+    @using (Html.BeginForm())
+    {
+        <p>Comments:<br /> @Html.TextArea("Body", null, new { cols = "200", rows = "10" })<br>@*@Html.TextBoxFor(model => model.Name)*@</p>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            Upload Summary Report:
+            <input type="file" name="fileToUpload" id="fileToUpload">
+        </form>
+        <br />
+        <input type="submit" value="Submit" />
+    }
+</div>
+
+
+
+
+
+

@@ -57,6 +57,11 @@ namespace INTEX.Controllers
             return View();
         }
 
+        public ActionResult NewWorkOrderForm()
+        {
+            return View();
+        }
+
         public ActionResult CurrentWorkOrders()
         {
             return View();

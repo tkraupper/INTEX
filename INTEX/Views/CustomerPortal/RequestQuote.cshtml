@@ -1,9 +1,28 @@
 ﻿
 @{
-    ViewBag.Title = "RequestQuote";
+    ViewBag.Title = "Request Quote";
 }
 
 <h2>Request A Quote</h2>
 
+@*Form text needs to be sent with the customer ID as an email to the sales rep who owns the customer ID. When form is submitted, 
+a new "QuoteRequest" row must be created with "QuoteRequestID" and "CustomerID".*@
 
+<div class="card">
+    <div class="card-body" style="background-color: #f8f9fa">
+        <p>Please fill out the form below and submit, we will contact you within 14 days. If you have questions feel free to reach out at info@northwestlabs.com or 801-555-5555.</p>
+    </div>
+</div>
+<br />
+<div class="jumbotron">
+    @using (Html.BeginForm())
+    {
+        <p>Compound Type:<br /> <input type="text" name="compound"><br>@*@Html.TextBoxFor(model => model.Name)*@</p>
+        <p>Expected Date: <br /><input type="text" name="expDate"><br>@*@Html.TextBoxFor(model => model.Email)*@</p>
+
+
+        <p>Description and Supplementary Notes:<br /> @Html.TextArea("Body", null, new { cols = "200", rows = "10" })</p>
+        <input type="submit" value="Submit" />
+    }
+</div>
 
