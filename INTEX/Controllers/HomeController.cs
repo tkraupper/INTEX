@@ -32,7 +32,7 @@ namespace INTEX.Controllers
 
         public ActionResult Catalog()
         {
-            return View();
+            return View(db.Assays.ToList());
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<!--Link Database Model-->
+﻿@Model INTEX.Models.Assay
 
 @{
     ViewBag.Title = "Catalog";
@@ -10,10 +10,10 @@
 <table>
     <tr>
         <th>
-            Test Type:
+            @Html.DisplayNameFor(model => model.AssayName)
         </th>
         <th>
-            Test Description:
+            @Html.DisplayNameFor(model => model.AssayDetails)
         </th>
     </tr>
 
@@ -21,13 +21,13 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Type)
+                @Html.DisplayFor(modelItem => item.AssayName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Description)
+                @Html.DisplayFor(modelItem => item.AssayDetails)
             </td>
         </tr>
     }
 
- </table>
+</table>
 
