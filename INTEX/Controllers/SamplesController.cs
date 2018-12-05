@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using INTEX.DAL;
 using INTEX.Models;
 
-namespace INTEX
+namespace INTEX.Controllers
 {
     public class SamplesController : Controller
     {
@@ -51,7 +51,7 @@ namespace INTEX
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CompoundSequenceCode,LTNumber,WorkOrderID,AssayID,IndicatedWeight,ActualWeight,QuantityInMilligrams,DateArrived,ReceivedBy,DateDue,Appearance,MolecularMass,MTD,SecondaryTestingApproval,AnalysisReport")] Sample sample)
+        public ActionResult Create([Bind(Include = "CompoundSequenceCode,LTNumber,WorkOrderID,AssayID,IndicatedWeight,ActualWeight,QuantityInMilligrams,DateArrived,RecievedBy,DateDue,Appearance,MolecularMass,MTD,SecondaryTestingApproval,AnalysisReport")] Sample sample)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace INTEX
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CompoundSequenceCode,LTNumber,WorkOrderID,AssayID,IndicatedWeight,ActualWeight,QuantityInMilligrams,DateArrived,ReceivedBy,DateDue,Appearance,MolecularMass,MTD,SecondaryTestingApproval,AnalysisReport")] Sample sample)
+        public ActionResult Edit([Bind(Include = "CompoundSequenceCode,LTNumber,WorkOrderID,AssayID,IndicatedWeight,ActualWeight,QuantityInMilligrams,DateArrived,RecievedBy,DateDue,Appearance,MolecularMass,MTD,SecondaryTestingApproval,AnalysisReport")] Sample sample)
         {
             if (ModelState.IsValid)
             {

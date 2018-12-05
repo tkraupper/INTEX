@@ -161,6 +161,7 @@
     <Compile Include="Controllers\ContactInfoesController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\PaymentsController.cs" />
+    <Compile Include="Controllers\SamplesController.cs" />
     <Compile Include="Controllers\SeattleEmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SingaporeEmployeeController.cs" />
@@ -200,7 +201,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\QuoteRequestsController.cs" />
     <Compile Include="Controllers\QuotesController.cs" />
-    <Compile Include="Controllers\SamplesController.cs" />
     <Compile Include="Controllers\TestMaterialsController.cs" />
     <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="Controllers\TestTubesController.cs" />
@@ -375,11 +375,6 @@
     <Content Include="Views\QuoteRequests\Details.cshtml" />
     <Content Include="Views\QuoteRequests\Edit.cshtml" />
     <Content Include="Views\QuoteRequests\Index.cshtml" />
-    <Content Include="Views\Samples\Create.cshtml" />
-    <Content Include="Views\Samples\Delete.cshtml" />
-    <Content Include="Views\Samples\Details.cshtml" />
-    <Content Include="Views\Samples\Edit.cshtml" />
-    <Content Include="Views\Samples\Index.cshtml" />
     <Content Include="Views\Tests\Create.cshtml" />
     <Content Include="Views\Tests\Delete.cshtml" />
     <Content Include="Views\Tests\Details.cshtml" />
@@ -405,6 +400,11 @@
     <Content Include="Views\Payments\Details.cshtml" />
     <Content Include="Views\Payments\Edit.cshtml" />
     <Content Include="Views\Payments\Index.cshtml" />
+    <Content Include="Views\Samples\Create.cshtml" />
+    <Content Include="Views\Samples\Delete.cshtml" />
+    <Content Include="Views\Samples\Details.cshtml" />
+    <Content Include="Views\Samples\Edit.cshtml" />
+    <Content Include="Views\Samples\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
