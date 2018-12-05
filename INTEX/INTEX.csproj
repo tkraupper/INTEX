@@ -406,6 +406,13 @@
     <Content Include="Views\Payments\Edit.cshtml" />
     <Content Include="Views\Payments\Index.cshtml" />
     <Content Include="Views\SeattlePortal\Index.cshtml" />
+    <Content Include="Views\CustomerPortal\CustomerRequestQuote.cshtml" />
+    <Content Include="Views\CustomerPortal\RequestQuote.cshtml" />
+    <Content Include="Views\CustomerPortal\NewWorkOrder.cshtml" />
+    <Content Include="Views\CustomerPortal\CurrentWorkOrders.cshtml" />
+    <Content Include="Views\CustomerPortal\ViewResults.cshtml" />
+    <Content Include="Views\CustomerPortal\CustomerBilling.cshtml" />
+    <Content Include="Views\CustomerPortal\CustomerAccount.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

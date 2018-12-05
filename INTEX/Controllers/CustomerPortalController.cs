@@ -45,5 +45,36 @@ namespace INTEX.Controllers
             }
             return View("Login");
         }
+
+
+        public ActionResult RequestQuote()
+        {
+            return View();
+        }
+
+        public ActionResult NewWorkOrder()
+        {
+            return View();
+        }
+
+        public ActionResult CurrentWorkOrders()
+        {
+            return View();
+        }
+
+        public ActionResult ViewResults()
+        {
+            return View();
+        }
+
+        public ActionResult CustomerBilling()
+        {
+            return View();
+        }
+
+        public ActionResult CustomerAccount()
+        {
+            return View();
+        }
     }
 }
