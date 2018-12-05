@@ -295,11 +295,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Customer\Login.cshtml" />
-    <Content Include="Views\SeattleEmployee\Login.cshtml" />
-    <Content Include="Views\SingaporeEmployee\Login.cshtml" />
+    <Content Include="Views\CustomerPortal\Login.cshtml" />
+    <Content Include="Views\SeattlePortal\Login.cshtml" />
+    <Content Include="Views\SingaporePortal\Login.cshtml" />
     <Content Include="Views\Home\Catalog.cshtml" />
-    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\CustomerPortal\Index.cshtml" />
     <Content Include="Views\Assays\Create.cshtml" />
     <Content Include="Views\Assays\Delete.cshtml" />
     <Content Include="Views\Assays\Details.cshtml" />
@@ -405,6 +405,7 @@
     <Content Include="Views\Payments\Details.cshtml" />
     <Content Include="Views\Payments\Edit.cshtml" />
     <Content Include="Views\Payments\Index.cshtml" />
+    <Content Include="Views\SeattlePortal\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
