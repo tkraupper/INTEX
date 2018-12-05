@@ -19,6 +19,6 @@ namespace INTEX.Models
         public string MaterialName { get; set; }
 
         [DisplayName("Cost")]
-        public double MaterialCost { get; set; }
+        public decimal MaterialCost { get; set; }
     }
 }

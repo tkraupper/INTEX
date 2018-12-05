@@ -160,6 +160,7 @@
     <Compile Include="Controllers\CompoundsController.cs" />
     <Compile Include="Controllers\ContactInfoesController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\PaymentsController.cs" />
     <Compile Include="Controllers\SeattleEmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SingaporeEmployeeController.cs" />
@@ -195,7 +196,6 @@
     <Compile Include="Models\TestTube.cs" />
     <Compile Include="Models\WorkOrder.cs" />
     <Compile Include="Controllers\PayInfoesController.cs" />
-    <Compile Include="Controllers\PaymentsController.cs" />
     <Compile Include="Controllers\PriceChangesController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\QuoteRequestsController.cs" />
@@ -360,11 +360,6 @@
     <Content Include="Views\PayInfoes\Details.cshtml" />
     <Content Include="Views\PayInfoes\Edit.cshtml" />
     <Content Include="Views\PayInfoes\Index.cshtml" />
-    <Content Include="Views\Payments\Create.cshtml" />
-    <Content Include="Views\Payments\Delete.cshtml" />
-    <Content Include="Views\Payments\Details.cshtml" />
-    <Content Include="Views\Payments\Edit.cshtml" />
-    <Content Include="Views\Payments\Index.cshtml" />
     <Content Include="Views\PriceChanges\Create.cshtml" />
     <Content Include="Views\PriceChanges\Delete.cshtml" />
     <Content Include="Views\PriceChanges\Details.cshtml" />
@@ -405,6 +400,11 @@
     <Content Include="Views\WorkOrders\Details.cshtml" />
     <Content Include="Views\WorkOrders\Edit.cshtml" />
     <Content Include="Views\WorkOrders\Index.cshtml" />
+    <Content Include="Views\Payments\Create.cshtml" />
+    <Content Include="Views\Payments\Delete.cshtml" />
+    <Content Include="Views\Payments\Details.cshtml" />
+    <Content Include="Views\Payments\Edit.cshtml" />
+    <Content Include="Views\Payments\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

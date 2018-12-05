@@ -20,8 +20,8 @@ namespace INTEX.Models
         public int InvoiceID { get; set; }
         public virtual Invoice Invoice { get; set; }
 
-        public double Amount { get; set; }
+        public decimal PaymentAmount { get; set; }
 
-        public string Date { get; set; }
+        public string PaymentDate { get; set; }
     }
 }

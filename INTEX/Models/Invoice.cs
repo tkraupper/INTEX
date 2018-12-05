@@ -27,6 +27,6 @@ namespace INTEX.Models
         public string EarlyPaymentDate { get; set; }
 
         [DisplayName("Early Payment Discount")]
-        public double EarlyPaymentDiscount { get; set; }
+        public string EarlyPaymentDiscount { get; set; }
     }
 }

@@ -19,9 +19,9 @@ namespace INTEX.Models
         public string TestDescription { get; set; }
 
         [DisplayName("Cost")]
-        public double TestCost { get; set; }
+        public decimal TestCost { get; set; }
 
         [DisplayName("Base Price")]
-        public double BasePrice { get; set; }
+        public decimal BasePrice { get; set; }
     }
 }

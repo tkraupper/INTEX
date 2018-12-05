@@ -20,6 +20,7 @@ namespace INTEX.Controllers
             CustomerCustomerCredentials cust = new CustomerCustomerCredentials();
             cust.CustomerCredentials = db.CustomerCredential.Find(currentCustomer);
             cust.Customer = db.Customers.Find(currentCustomer);
+            if (cust.CustomerCredentials == null || cust.Customer == null) { return Content("Fail"); }
             return View(cust);
         }
 

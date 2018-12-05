@@ -23,10 +23,10 @@ namespace INTEX.Models
         public virtual ContactInfo ContactInfo { get; set; }
 
         [DisplayName("Payment Information ID")]
-        public string PayInfoID { get; set; }
+        public int PayInfoID { get; set; }
         public virtual PayInfo PayInfo { get; set; }
 
         [DisplayName("Running Balance")]
-        public double RunningBalance { get; set; }
+        public decimal RunningBalance { get; set; }
     }
 }

@@ -21,6 +21,6 @@ namespace INTEX.Models
         public virtual QuoteRequest QuoteRequest { get; set; }
 
         [DisplayName("Quoted Amount")]
-        public double QuotedAmount { get; set; }
+        public decimal QuotedAmount { get; set; }
     }
 }

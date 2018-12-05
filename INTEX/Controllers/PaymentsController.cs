@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using INTEX.DAL;
 using INTEX.Models;
 
-namespace INTEX
+namespace INTEX.Controllers
 {
     public class PaymentsController : Controller
     {
@@ -49,7 +49,7 @@ namespace INTEX
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PaymentID,InvoiceID,Amount,Date")] Payment payment)
+        public ActionResult Create([Bind(Include = "PaymentID,InvoiceID,PaymentAmount,PaymentDate")] Payment payment)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace INTEX
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PaymentID,InvoiceID,Amount,Date")] Payment payment)
+        public ActionResult Edit([Bind(Include = "PaymentID,InvoiceID,PaymentAmount,PaymentDate")] Payment payment)
         {
             if (ModelState.IsValid)
             {
