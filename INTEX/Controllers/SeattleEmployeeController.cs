@@ -1,4 +1,6 @@
-﻿using System;
+﻿using INTEX.DAL;
+using INTEX.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +10,10 @@ namespace INTEX.Controllers
 {
     public class SeattleEmployeeController : Controller
     {
+        public IntexContext db = new IntexContext();
+
+        public static int currentEmployee;
+
         // GET: Employee
         public ActionResult Index()
         {
@@ -24,14 +30,16 @@ namespace INTEX.Controllers
         [HttpPost]
         public ActionResult Login(string uname, string psw)
         {
-            if (uname == "Missouri" && psw == "ShowMe")
+            List<EmployeeCredentials> logins = db.EmployeeCredential.ToList();
+            foreach (EmployeeCredentials creds in logins)
             {
-                return RedirectToAction("Portal", "SeattleEmployee");
+                if (uname == creds.Username && psw == creds.Password)
+                {
+                    currentEmployee = creds.EmployeeID;
+                    return RedirectToAction("Index");
+                }
             }
-            else
-            {
-                return View("Login");
-            }
+            return View("Login");
 
         }
     }
