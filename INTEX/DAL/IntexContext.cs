@@ -18,6 +18,7 @@ namespace INTEX.DAL
         public DbSet<AssayRequest> AssayRequests { get; set; }
         public DbSet<AssayTest> AssayTests { get; set; }
         public DbSet<Authorization> Authorizations { get; set; }
+        public DbSet<Compound> Compounds { get; set; }
         public DbSet<ContactInfo> ContactInfos { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<CustomerCredentials> CustomerCredential { get; set; }
