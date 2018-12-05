@@ -169,6 +169,7 @@
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\CustomerCredentials.cs" />
+    <Compile Include="Models\CustomerCustomerCredentials.cs" />
     <Compile Include="Models\EmployeeCredentials.cs" />
     <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\Material.cs" />
@@ -277,6 +278,7 @@
     <Content Include="Views\SeattleEmployee\Login.cshtml" />
     <Content Include="Views\SingaporeEmployee\Login.cshtml" />
     <Content Include="Views\Home\Catalog.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -16,6 +16,7 @@ namespace INTEX.Models
         public string Name { get; set; }
 
         public int ContactID { get; set; }
+        public virtual ContactInfo ContactInfo { get; set; }
 
         public string PayInfoID { get; set; }
         public virtual PayInfo PayInfo { get; set; }
