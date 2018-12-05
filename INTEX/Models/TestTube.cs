@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace INTEX.Models
     public class TestTube
     {
         [Key]
+        [DisplayName("Test Tube ID")]
         public int TestTubeID { get; set; }
 
         //FOREIGN KEYS LINKING TO SAMPLE TABLE
@@ -20,12 +22,16 @@ namespace INTEX.Models
         public virtual Sample Sample { get; set; }
         //Do I need to generate another Sample object?
 
+        [DisplayName("Test ID")]
         public int TestID { get; set; }
 
+        [DisplayName("Actual Cost")]
         public double ActualCost { get; set; }
 
+        [DisplayName("Test Date Time")]
         public string TestDateTime { get; set; }
 
+        [DisplayName("Status")]
         public string TestStatus { get; set; }
 
         public int Predecessor { get; set; }
