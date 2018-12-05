@@ -15,7 +15,6 @@ namespace INTEX.Models
         [DisplayName("Quote ID")]
         public int QuoteID { get; set; }
 
-        [ForeignKey("QuoteRequest")]
         [DisplayName("Quote Request ID")]
         public int QuoteRequestID { get; set; }
         public virtual QuoteRequest QuoteRequest { get; set; }
