@@ -11,7 +11,7 @@ namespace INTEX.Models
     public class EmployeeCredentials
     {
         [Key]
-        public string EmployeeID { get; set; }
+        public int EmployeeID { get; set; }
 
         public string Username { get; set; }
 
