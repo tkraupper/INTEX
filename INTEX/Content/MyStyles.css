@@ -7,22 +7,19 @@
     padding: 0;
 }
 
-.main-content {
-    width: 60%;
-    float: left;
-    background: teal;
+.wrapper {
+    display: flex;
+    width: 100%;
 }
 
-.aside {
-    width: 40%;
-    float: left;
-}
-
-.wrapper, html, body {
-    height: 100%;
-}
-
-.HeaderImg {
-    width: 350px;
-    height:auto;
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #7386D5;
+    color: #fff;
+    transition: all 0.3s;
 }

@@ -1,9 +1,13 @@
-﻿using INTEX.DAL;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using INTEX.DAL;
+using INTEX.Models;
 
 namespace INTEX.Controllers
 {
@@ -30,9 +34,38 @@ namespace INTEX.Controllers
             return View();
         }
 
-        public ActionResult Catalog()
+        //SHOW CATALOGS LINK AT BOTTOM OF PAGE
+        public ActionResult PharmacologyCatalog()
         {
-            return View(db.Assays.ToList());
+            return View("PharmacologyCatalog", db.Assays.ToList());
+        }
+
+        public ActionResult ProtocolCatalog()
+        {
+            return View("ProtocolCatalog", db.Assays.ToList());
+        }
+
+        // GET: Customers/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Customers/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "CustomerID,Name,ContactID,PayInfoID,RunningBalance")] Customer customer)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Customers.Add(customer);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(customer);
         }
     }
 }
