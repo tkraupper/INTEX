@@ -18,9 +18,9 @@ namespace INTEX.Models
         public int ContactID { get; set; }
         public virtual ContactInfo ContactInfo { get; set; }
 
-        public string PayInfoID { get; set; }
+        public int PayInfoID { get; set; }
         public virtual PayInfo PayInfo { get; set; }
 
-        public double RunningBalance { get; set; }
+        public decimal RunningBalance { get; set; }
     }
 }

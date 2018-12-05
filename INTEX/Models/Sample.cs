@@ -23,7 +23,7 @@ namespace INTEX.Models
         public int AssayID { get; set; }
         public virtual Assay Assay { get; set; }
 
-        public float IndicatedWeight { get; set; }
+        public double? IndicatedWeight { get; set; }
 
         public float ActualWeight { get; set; }
 
@@ -31,7 +31,7 @@ namespace INTEX.Models
 
         public string DateArrived { get; set; }
 
-        public string ReceivedBy { get; set; }
+        //public string ReceivedBy { get; set; }
 
         public string DateDue { get; set; }
 

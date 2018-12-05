@@ -17,7 +17,7 @@ namespace INTEX.Models
 
         public string AssayDetails { get; set; }
 
-        public string TimeEstimate { get; set; }
+        public double? TimeEstimate { get; set; }
 
         public string LiteratureReferences { get; set; }
     }

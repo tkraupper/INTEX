@@ -28,7 +28,7 @@ namespace INTEX
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Authorization authorization = db.Authorizations.Find(id);
+            Models.Authorization authorization = db.Authorizations.Find(id);
             if (authorization == null)
             {
                 return HttpNotFound();
@@ -47,7 +47,7 @@ namespace INTEX
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AuthID,AuthType")] Authorization authorization)
+        public ActionResult Create([Bind(Include = "AuthID,AuthType")] Models.Authorization authorization)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +66,7 @@ namespace INTEX
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Authorization authorization = db.Authorizations.Find(id);
+            Models.Authorization authorization = db.Authorizations.Find(id);
             if (authorization == null)
             {
                 return HttpNotFound();
@@ -79,7 +79,7 @@ namespace INTEX
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AuthID,AuthType")] Authorization authorization)
+        public ActionResult Edit([Bind(Include = "AuthID,AuthType")] Models.Authorization authorization)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +97,7 @@ namespace INTEX
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Authorization authorization = db.Authorizations.Find(id);
+            Models.Authorization authorization = db.Authorizations.Find(id);
             if (authorization == null)
             {
                 return HttpNotFound();
@@ -110,7 +110,7 @@ namespace INTEX
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Authorization authorization = db.Authorizations.Find(id);
+            Models.Authorization authorization = db.Authorizations.Find(id);
             db.Authorizations.Remove(authorization);
             db.SaveChanges();
             return RedirectToAction("Index");

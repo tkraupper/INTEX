@@ -21,13 +21,18 @@ namespace INTEX.Models
         //Do I need to generate another Sample object?
 
         public int TestID { get; set; }
+        public virtual Test Test { get; set; }
 
-        public double ActualCost { get; set; }
+        public decimal ActualCost { get; set; }
 
         public string TestDateTime { get; set; }
 
         public string TestStatus { get; set; }
 
-        public int Predecessor { get; set; }
+        public int? Predecessor { get; set; }
+
+        public string QualitativeResult { get; set; }
+
+        public string QuantitativeResult { get; set; }
     }
 }
