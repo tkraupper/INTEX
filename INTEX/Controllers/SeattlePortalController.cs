@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace INTEX.Controllers
 {
-    public class SeattleEmployeeController : Controller
+    public class SeattlePortalController : Controller
     {
         public IntexContext db = new IntexContext();
 
