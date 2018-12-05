@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using INTEX.DAL;
 using INTEX.Models;
 
-namespace INTEX
+namespace INTEX.Controllers
 {
     public class CustomersController : Controller
     {
