@@ -298,7 +298,6 @@
     <Content Include="Views\CustomerPortal\Login.cshtml" />
     <Content Include="Views\SeattlePortal\Login.cshtml" />
     <Content Include="Views\SingaporePortal\Login.cshtml" />
-    <Content Include="Views\Home\Catalog.cshtml" />
     <Content Include="Views\CustomerPortal\Index.cshtml" />
     <Content Include="Views\Assays\Create.cshtml" />
     <Content Include="Views\Assays\Delete.cshtml" />
@@ -407,8 +406,9 @@
     <Content Include="Views\Payments\Index.cshtml" />
     <Content Include="Views\SeattlePortal\Index.cshtml" />
     <Content Include="Views\SingaporePortal\Index.cshtml" />
-    <Content Include="Views\SeattlePortal\Quote.cshtml" />
-    <Content Include="Views\SeattlePortal\PendingQuoteRequests.cshtml" />
+    <Content Include="Views\Home\ProtocolCatalog.cshtml" />
+    <Content Include="Views\Home\PharmacologyCatalog.cshtml" />
+    <Content Include="Views\Home\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
