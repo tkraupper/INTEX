@@ -1,0 +1,52 @@
+﻿@model IEnumerable<INTEX.Models.Assay>
+
+@{
+    ViewBag.Title = "ProtocolCatalog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ProtocolCatalog</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AssayName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssayDetails)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeEstimate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LiteratureReferences)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssayName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssayDetails)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeEstimate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LiteratureReferences)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AssayID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AssayID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AssayID })
+        </td>
+    </tr>
+}
+
+</table>

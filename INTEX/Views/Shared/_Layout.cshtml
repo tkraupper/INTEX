@@ -27,7 +27,16 @@
                     <li class="nav-item">@Html.ActionLink("Home", "Index", "Home")</li>
                     <li class="nav-item">@Html.ActionLink("About", "About", "Home")</li>
                     <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li cclass="nav-item">@Html.ActionLink("Customer Login", "Login", "Customer")</li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Customer Login
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item">@Html.ActionLink("Customer Login", "Login", "Customer")</a>
+                            <br />
+                            <a class="dropdown-item">@Html.ActionLink("New Customer", "Create", "Home")</a>
+                        </div>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Employee Login
