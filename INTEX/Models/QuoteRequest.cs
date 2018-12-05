@@ -21,5 +21,7 @@ namespace INTEX.Models
         public virtual Customer Customer { get; set; }
 
         public virtual ICollection<AssayRequest> AssayRequests { get; set; }
+
+        public virtual Quote Quote { get; set; }
     }
 }

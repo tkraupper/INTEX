@@ -80,7 +80,7 @@ namespace INTEX.Controllers
             //    }
             //}
             //return View(reqs);
-            return View();
+            return View(db.QuoteRequests.ToList());
         }
 
         // BASIC QUOTE RESPONSE PAGE

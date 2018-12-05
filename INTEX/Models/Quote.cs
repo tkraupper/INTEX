@@ -22,5 +22,7 @@ namespace INTEX.Models
 
         [DisplayName("Quoted Amount")]
         public decimal QuotedAmount { get; set; }
+
+        
     }
 }
