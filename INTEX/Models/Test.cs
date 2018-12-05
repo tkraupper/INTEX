@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -11,12 +12,16 @@ namespace INTEX.Models
     public class Test
     {
         [Key]
+        [DisplayName("Test ID")]
         public int TestID { get; set; }
 
+        [DisplayName("Description")]
         public string TestDescription { get; set; }
 
-        public decimal TestCost { get; set; }
+        [DisplayName("Cost")]
+        public double TestCost { get; set; }
 
-        public decimal BasePrice { get; set; }
+        [DisplayName("Base Price")]
+        public double BasePrice { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -11,11 +12,14 @@ namespace INTEX.Models
     public class WorkOrder
     {
         [Key]
+        [DisplayName("Work Order ID")]
         public int WorkOrderID { get; set; }
 
+        [DisplayName("Quote ID")]
         public int QuoteID { get; set; }
         public virtual Quote Quote { get; set; }
 
+        [DisplayName("Confirmation Date")]
         public string ConfirmationSentDate { get; set; }
 
         public int CustomerID { get; set; }
@@ -29,6 +33,7 @@ namespace INTEX.Models
 
         public string Comments { get; set; }
 
+        [DisplayName("Summary Report")]
         public string SummaryReport { get; set; }
     }
 }

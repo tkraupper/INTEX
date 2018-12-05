@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -11,9 +12,11 @@ namespace INTEX.Models
     public class QuoteRequest
     {
         [Key]
+        [DisplayName("Quote Request ID")]
         public int QuoteRequestID { get; set; }
 
         [ForeignKey("Customer")]
+        [DisplayName("Customer ID")]
         public int CustomerID { get; set; }
         public virtual Customer Customer { get; set; }
     }
