@@ -18,7 +18,7 @@ namespace INTEX.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            return View("Login", "SingaporePortal");
+            return View();
         }
 
         [HttpPost]
