@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace INTEX.Controllers
 {
-    public class CustomerController : Controller
+    public class CustomerPortalController : Controller
     {
         public IntexContext db = new IntexContext();
 

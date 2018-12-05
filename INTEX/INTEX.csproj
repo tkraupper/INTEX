@@ -159,11 +159,11 @@
     <Compile Include="Controllers\AuthorizationsController.cs" />
     <Compile Include="Controllers\CompoundsController.cs" />
     <Compile Include="Controllers\ContactInfoesController.cs" />
-    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\CustomerPortalController.cs" />
     <Compile Include="Controllers\PaymentsController.cs" />
-    <Compile Include="Controllers\SeattleEmployeeController.cs" />
+    <Compile Include="Controllers\SeattlePortalController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\SingaporeEmployeeController.cs" />
+    <Compile Include="Controllers\SingaporePortalController.cs" />
     <Compile Include="Controllers\CustomerCredentialsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="DAL\IntexContext.cs" />
