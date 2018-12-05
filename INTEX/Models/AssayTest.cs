@@ -10,10 +10,11 @@ namespace INTEX.Models
     [Table("AssayTest")]
     public class AssayTest
     {
-        [Key]
+        [Key, Column(Order = 0)]
         public int AssayID { get; set; }
+        public virtual Assay Assay { get; set; }
 
-        [ForeignKey("Test")]
+        [Key, Column(Order = 1)]
         public int TestID { get; set; }
         public virtual Test Test { get; set; }
 

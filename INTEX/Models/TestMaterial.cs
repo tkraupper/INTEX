@@ -10,11 +10,11 @@ namespace INTEX.Models
     [Table("TestMaterial")]
     public class TestMaterial
     {
-        [Key]
+        [Key, Column(Order = 0)]
         public int TestID { get; set; }
+        public virtual Test Test { get; set; }
 
-        [Key]
-        [ForeignKey("Material")]
+        [Key, Column(Order = 1)]
         public int MaterialID { get; set; }
         public virtual Material Material { get; set; }
 

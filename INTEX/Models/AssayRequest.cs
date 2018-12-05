@@ -10,16 +10,15 @@ namespace INTEX.Models
     [Table("AssayRequest")]
     public class AssayRequest
     {
-        [Key]
+        [Key, Column(Order = 0)]
         public int QuoteRequestID { get; set; }
+        public virtual QuoteRequest QuoteRequest { get; set; }
 
-        [Key]
-        [ForeignKey("Compound")]
+        [Key, Column(Order = 1)]
         public int LTNumber { get; set; }
         public virtual Compound Compound { get; set; }
 
-        [Key]
-        [ForeignKey("Assay")]
+        [Key, Column(Order = 2)]
         public int AssayID { get; set; }
         public virtual Assay Assay { get; set; }
     }
