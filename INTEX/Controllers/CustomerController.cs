@@ -17,7 +17,10 @@ namespace INTEX.Controllers
         // GET: Client
         public ActionResult Index()
         {
-            return View();
+            CustomerCustomerCredentials cust = new CustomerCustomerCredentials();
+            cust.CustomerCredentials = db.CustomerCredential.Find(currentCustomer);
+            cust.Customer = db.Customers.Find(currentCustomer);
+            return View(cust);
         }
 
         //LOGIN METHODS FOR THE CUSTOMER
@@ -36,7 +39,7 @@ namespace INTEX.Controllers
                 if (uname == creds.Username && psw == creds.Password)
                 {
                     currentCustomer = creds.CustomerID;
-                    return RedirectToAction("Index", "Customer");
+                    return RedirectToAction("Index");
                 }
             }
             return View("Login");
