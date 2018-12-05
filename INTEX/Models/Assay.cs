@@ -26,5 +26,9 @@ namespace INTEX.Models
 
         [DisplayName("Literature References")]
         public string LiteratureReferences { get; set; }
+
+        public virtual ICollection<AssayRequest> AssayRequest { get; set; }
+
+        public virtual ICollection<AssayTest> AssayTest { get; set; }
     }
 }

@@ -17,5 +17,7 @@ namespace INTEX.Models
 
         [DisplayName("Authorization Type")]
         public string AuthType { get; set; }
+
+        public virtual ICollection<EmployeeCredentials> EmployeeCredentials { get; set; }
     }
 }
