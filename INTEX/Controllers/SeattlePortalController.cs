@@ -48,7 +48,10 @@ namespace INTEX.Controllers
 
         }
 
-
+        public ActionResult PendingQuoteRequests()
+        {
+            return View(db.QuoteRequests.ToList());
+        }
 
         // BASIC QUOTE RESPONSE PAGE
         [HttpGet]
