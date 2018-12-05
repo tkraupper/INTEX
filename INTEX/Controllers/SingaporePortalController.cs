@@ -18,7 +18,7 @@ namespace INTEX.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            return View("Login");
+            return View("Login", "SingaporePortal");
         }
 
         [HttpPost]
@@ -26,7 +26,7 @@ namespace INTEX.Controllers
         {
             if (uname == "Missouri" && psw == "ShowMe")
             {
-                return RedirectToAction("Portal", "SingaporeEmployee");
+                return RedirectToAction("Index", "SingaporePortal");
             }
             else
             {
