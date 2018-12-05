@@ -19,5 +19,7 @@ namespace INTEX.Models
         [DisplayName("Customer ID")]
         public int CustomerID { get; set; }
         public virtual Customer Customer { get; set; }
+
+        public virtual ICollection<AssayRequest> AssayRequests { get; set; }
     }
 }

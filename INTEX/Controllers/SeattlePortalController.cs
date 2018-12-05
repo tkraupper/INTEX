@@ -14,6 +14,22 @@ namespace INTEX.Controllers
 
         public static int currentEmployee = -1;
 
+
+        public ActionResult testParent()
+        {
+            string info = "List of QuoteRequests with ArrayRequests:\n";
+            var quoters = db.QuoteRequests.ToList();
+            foreach (QuoteRequest quoter in quoters)
+            {
+                info += "QuoteRequest #" + quoter.QuoteRequestID + "\n";
+                foreach (AssayRequest assayr in quoter.AssayRequests)
+                {
+                    info += "Assay #" + assayr.AssayID + "\n";
+                }
+            }
+
+            return Content(info);
+        }
         // HOME PAGE
         public ActionResult Index()
         {
@@ -46,18 +62,46 @@ namespace INTEX.Controllers
             }
             return View("Login");
 
+            
+
         }
 
+        // DISPLAY QUOTE REQUESTS
         public ActionResult PendingQuoteRequests()
         {
-            return View(db.QuoteRequests.ToList());
+            //List<int> ids = db.Quotes.Where(null).Select(q => q.QuoteRequestID) //SqlQuery("SELECT QuoteRequestID FROM Quote");
+            //var all = db.QuoteRequests.ToList();
+            //var reqs = new List<QuoteRequest>();
+            //foreach (QuoteRequest r in all)
+            //{
+            //    foreach (int id in ids)
+            //    {
+            //        if 
+            //    }
+            //}
+            //return View(reqs);
+            return View();
         }
 
         // BASIC QUOTE RESPONSE PAGE
         [HttpGet]
-        public ActionResult Quote(int requestid)
+        public ActionResult Quote(int id)
         {
+            ViewBag.id = id;
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Quote(Quote quote, int id)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Quotes.Add(quote);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return RedirectToAction("PendingQuoteRequests");
         }
     }
 }

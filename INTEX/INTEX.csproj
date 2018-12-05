@@ -407,6 +407,8 @@
     <Content Include="Views\Payments\Index.cshtml" />
     <Content Include="Views\SeattlePortal\Index.cshtml" />
     <Content Include="Views\SingaporePortal\Index.cshtml" />
+    <Content Include="Views\SeattlePortal\Quote.cshtml" />
+    <Content Include="Views\SeattlePortal\PendingQuoteRequests.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
