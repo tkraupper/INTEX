@@ -1,0 +1,51 @@
+﻿@model INTEX.Models.Assay
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Assay</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AssayName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssayName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssayDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssayDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeEstimate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeEstimate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LiteratureReferences)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LiteratureReferences)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AssayID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

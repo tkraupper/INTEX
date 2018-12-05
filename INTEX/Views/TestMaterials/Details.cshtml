@@ -1,0 +1,43 @@
+﻿@model INTEX.Models.TestMaterial
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TestMaterial</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Material.MaterialName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Material.MaterialName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Test.TestDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Test.TestDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantityUsed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantityUsed)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

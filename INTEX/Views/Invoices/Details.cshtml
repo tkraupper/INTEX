@@ -1,0 +1,51 @@
+﻿@model INTEX.Models.Invoice
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Invoice</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkOrder.ConfirmationSentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkOrder.ConfirmationSentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DueDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DueDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EarlyPaymentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EarlyPaymentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EarlyPaymentDiscount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EarlyPaymentDiscount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.InvoiceID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

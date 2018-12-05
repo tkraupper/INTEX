@@ -1,0 +1,64 @@
+﻿@model IEnumerable<INTEX.Models.TestTube>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Sample.DateArrived)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActualCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Predecessor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sample.DateArrived)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TestID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActualCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TestDateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TestStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Predecessor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TestTubeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TestTubeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TestTubeID })
+        </td>
+    </tr>
+}
+
+</table>
