@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace INTEX.Controllers
 {
-    public class SingaporeEmployeeController : Controller
+    public class SingaporePortalController : Controller
     {
         // GET: SingaporeEmployee
         public ActionResult Index()
