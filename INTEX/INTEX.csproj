@@ -165,6 +165,7 @@
     <Compile Include="Models\AssayRequest.cs" />
     <Compile Include="Models\AssayTest.cs" />
     <Compile Include="Models\Authorization.cs" />
+    <Compile Include="Models\Compound.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\CustomerCredentials.cs" />

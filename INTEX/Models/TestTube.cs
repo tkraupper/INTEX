@@ -13,9 +13,14 @@ namespace INTEX.Models
         [Key]
         public int TestTubeID { get; set; }
 
-        public int LTNumber { get; set; }
+        //FOREIGN KEYS LINKING TO SAMPLE TABLE
+        [ForeignKey("Sample")]
+        public int? LTNumber { get; set; }
+        public virtual Sample Sample { get; set; }
 
+        [ForeignKey("Sample")]
         public int CompoundSequenceCode { get; set; }
+        //Do I need to generate another Sample object?
 
         public int TestID { get; set; }
 

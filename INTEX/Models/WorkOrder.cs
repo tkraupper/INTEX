@@ -13,15 +13,23 @@ namespace INTEX.Models
         [Key]
         public int WorkOrderID { get; set; }
 
+        [ForeignKey("Quote")]
         public int QuoteID { get; set; }
+        public virtual Quote Quote { get; set; }
 
         public string ConfirmationSentDate { get; set; }
 
+        [ForeignKey("Customer")]
         public int CustomerID { get; set; }
+        public virtual Customer Customer { get; set; }
 
+        [ForeignKey("ContactInfo")]
         public int ContactID { get; set; }
+        public virtual ContactInfo ContactInfo { get; set; }
 
+        [ForeignKey("PayInfo")]
         public int PayInfoID { get; set; }
+        public virtual PayInfo PayInfo { get; set; }
 
         public string Comments { get; set; }
 

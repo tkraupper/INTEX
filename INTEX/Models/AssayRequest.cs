@@ -13,8 +13,14 @@ namespace INTEX.Models
         [Key]
         public int QuoteRequestID { get; set; }
 
+        [Key]
+        [ForeignKey("Compound")]
         public int LTNumber { get; set; }
+        public virtual Compound Compound { get; set; }
 
+        [Key]
+        [ForeignKey("Assay")]
         public int AssayID { get; set; }
+        public virtual Assay Assay { get; set; }
     }
 }

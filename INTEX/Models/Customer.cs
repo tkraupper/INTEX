@@ -15,9 +15,11 @@ namespace INTEX.Models
 
         public string Name { get; set; }
 
-        public int Contact { get; set; }
+        public int ContactID { get; set; }
 
-        public string PaymentInfo { get; set; }
+        [ForeignKey("PayInfo")]
+        public string PaymentInfoID { get; set; }
+        public virtual PayInfo PayInfo { get; set; }
 
         public double RunningBalance { get; set; }
     }

@@ -13,7 +13,9 @@ namespace INTEX.Models
         [Key]
         public int AssayID { get; set; }
 
+        [ForeignKey("Test")]
         public int TestID { get; set; }
+        public virtual Test Test { get; set; }
 
         public bool Conditional { get; set; }
     }

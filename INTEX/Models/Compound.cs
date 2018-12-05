@@ -7,14 +7,14 @@ using System.Web;
 
 namespace INTEX.Models
 {
-    [Table("QuoteRequest")]
-    public class QuoteRequest
+    [Table("Compound")]
+    public class Compound
     {
         [Key]
-        public int QuoteRequestID { get; set; }
+        public int LTNumber { get; set; }
 
-        [ForeignKey("Customer")]
-        public int CustomerID { get; set; }
-        public virtual Customer Customer { get; set; }
+        public string CompoundName { get; set; }
+
+        public string Description { get; set; }
     }
 }

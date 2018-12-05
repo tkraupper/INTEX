@@ -13,7 +13,9 @@ namespace INTEX.Models
         [Key]
         public int PaymentID { get; set; }
 
+        [ForeignKey("Invoice")]
         public int InvoiceID { get; set; }
+        public virtual Invoice Invoice { get; set; }
 
         public double Amount { get; set; }
 

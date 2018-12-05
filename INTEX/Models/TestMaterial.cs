@@ -14,7 +14,9 @@ namespace INTEX.Models
         public int TestID { get; set; }
 
         [Key]
+        [ForeignKey("Material")]
         public int MaterialID { get; set; }
+        public virtual Material Material { get; set; }
 
         public double QuantityUsed { get; set; }
     }

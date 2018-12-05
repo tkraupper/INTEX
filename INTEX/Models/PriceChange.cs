@@ -13,7 +13,9 @@ namespace INTEX.Models
         [Key]
         public int PriceChangeID { get; set; }
 
+        [ForeignKey("WorkOrder")]
         public int WorkOrderID { get; set; }
+        public virtual WorkOrder WorkOrder { get; set; }
 
         public double Amount { get; set; }
 

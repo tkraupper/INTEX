@@ -17,6 +17,8 @@ namespace INTEX.Models
 
         public string Password { get; set; }
 
+        [ForeignKey("Authorization")]
         public int AuthID { get; set; }
+        public virtual Authorization Authorization { get; set; }
     }
 }

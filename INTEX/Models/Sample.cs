@@ -14,11 +14,17 @@ namespace INTEX.Models
         public int CompoundSequenceCode { get; set; }
 
         [Key]
+        [ForeignKey("Compound")]
         public int LTNumber { get; set; }
+        public virtual Compound Compound { get; set; }
 
+        [ForeignKey("WorkOrder")]
         public int WorkOrderID { get; set; }
+        public virtual WorkOrder WorkOrder { get; set; }
 
+        [ForeignKey("Assay")]
         public int AssayID { get; set; }
+        public virtual Assay Assay { get; set; }
 
         public float IndicatedWeight { get; set; }
 

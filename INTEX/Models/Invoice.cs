@@ -13,7 +13,9 @@ namespace INTEX.Models
         [Key]
         public int InvoiceID { get; set; }
 
+        [ForeignKey("WorkOrder")]
         public int WorkOrderID { get; set; }
+        public virtual WorkOrder WorkOrder { get; set; }
 
         public string DueDate { get; set; }
 
