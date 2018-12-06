@@ -260,13 +260,16 @@
     <Content Include="Content\Images\invoice.png" />
     <Content Include="Content\Images\LabGlass.jpeg" />
     <Content Include="Content\Images\LabTech.jpeg" />
+    <Content Include="Content\Images\MicroscopeCropped.jpg" />
     <Content Include="Content\Images\placeholder.png" />
     <Content Include="Content\Images\Seattle.jpg" />
+    <Content Include="Content\Images\SeattleCropped.jpg" />
     <Content Include="Content\Images\Sinapore.jpg" />
     <Content Include="Content\Images\MicroscopeInLab.jpeg" />
     <Content Include="Content\Images\Northwest LabsWhite.png" />
     <Content Include="Content\Images\Northwest Labs.png" />
     <Content Include="Content\Images\microscopes.jpg" />
+    <Content Include="Content\Images\SingaporeCropped.jpg" />
     <Content Include="Content\Images\TestTubes.jpeg" />
     <Content Include="Content\MyStyles.css" />
     <Content Include="favicon.ico" />
@@ -422,6 +425,18 @@
     <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\SeattlePortal\PendingQuoteRequests.cshtml" />
     <Content Include="Views\SeattlePortal\Quote.cshtml" />
+    <Content Include="Views\SingaporePortal\ActiveWorkOrderIndex.cshtml" />
+    <Content Include="Views\SingaporePortal\ConfirmWorkOrder.cshtml" />
+    <Content Include="Views\SingaporePortal\SamplesCreate.cshtml" />
+    <Content Include="Views\SingaporePortal\SamplesDelete.cshtml" />
+    <Content Include="Views\SingaporePortal\SamplesDetails.cshtml" />
+    <Content Include="Views\SingaporePortal\SamplesEdit.cshtml" />
+    <Content Include="Views\SingaporePortal\SamplesIndex.cshtml" />
+    <Content Include="Views\SingaporePortal\ScheduleTest.cshtml" />
+    <Content Include="Views\SingaporePortal\WorkOrderDelete.cshtml" />
+    <Content Include="Views\SingaporePortal\WorkOrderDetails.cshtml" />
+    <Content Include="Views\SingaporePortal\WorkOrderEdit.cshtml" />
+    <Content Include="Views\SingaporePortal\WorkOrderIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
