@@ -1,17 +1,47 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    1408 4th Ave Ste 400<br />
-    Seattle, WA 98101<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@Northwest.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@Northwest.com</a>
-</address>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card" style="width: 30rem;">
+            <div class="card-body">
+                <img align="right" src="~/Content/Images/placeholder.png" width="50%" alt="Card image cap">
+                <h3 class="card-title">Visit Us</h3>
+                <p class="card-text">
+                    1408 4th Ave Ste 400<br />
+                    Seattle, WA 98101<br />
+                </p>
+                <a href=@Url.Action("ProtocolCatalog") class="btn btn-primary">View List</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" style="width: 30rem;">
+            <div class="card-body">
+                <img align="right" src="~/Content/Images/customer-service.png" width="50%" alt="Card image cap">
+                <h3 class="card-title">Talk with Us</h3>
+                <p class="card-text">
+                    <abbr title="Phone">Phone</abbr>
+                    425.555.0100 <br />
+                    <br />
+                    <p>Email:</p>
+                    <a href="mailto:Support@example.com">Support@Northwest.com</a>
+                    <a href="mailto:Marketing@example.com">Marketing@Northwest.com</a>
+                </p>
+                <a href=@Url.Action("PharmacologyCatalog") class="btn btn-primary">View Catalog</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" style="width: 30rem;">
+            <div class="card-body">
+                <img align="right" src="~/Content/Images/invoice.png" width="50%" alt="Card image cap">
+                <h3 class="card-title">Request Quote</h3>
+                <p class="card-text">Interested in doing business with us?</p>
+                <a href=@Url.Action("PharmacologyCatalog") class="btn btn-primary">Request Your Quote</a>
+            </div>
+        </div>
+    </div>
+</div>
