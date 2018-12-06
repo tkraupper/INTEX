@@ -3,6 +3,7 @@ using INTEX.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -67,9 +68,20 @@ namespace INTEX.Controllers
             return View();
         }
 
-        public ActionResult ViewResults()
+        public ActionResult ViewResults(int cID)
         {
-            return View();
+            if (cID == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Customer customer = db.Customers.Find(cID);
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
+            return View(customer);
+
+            
         }
 
         public ActionResult CustomerBilling()
