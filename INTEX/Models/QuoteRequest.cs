@@ -15,11 +15,13 @@ namespace INTEX.Models
         [DisplayName("Quote Request ID")]
         public int QuoteRequestID { get; set; }
 
-        [ForeignKey("Customer")]
         [DisplayName("Customer ID")]
         public int CustomerID { get; set; }
         public virtual Customer Customer { get; set; }
 
-        public virtual ICollection<AssayRequest> AssayRequests { get; set; }
+        //public virtual ICollection<AssayRequest> AssayRequests { get; set; }
+
+        public virtual ICollection<Quote> Quote { get; internal set; }
+        public virtual ICollection<AssayRequest> AssayRequests { get; internal set; }
     }
 }

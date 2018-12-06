@@ -15,7 +15,7 @@
         <h4>Quote for QuoteRequest #@ViewBag.id</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        
+
 
         <div class="form-group">
             @Html.LabelFor(model => model.QuotedAmount, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -32,7 +32,25 @@
         </div>
     </div>
 }
-
+@{ decimal estimate = 0; }
+@foreach (var assayr in @ViewBag.assayrs)
+{
+    decimal assaycost = 0;
+    <p>Assay:@assayr.Assay.AssayName Compound:@assayr.Compound.CompoundName</p>
+    foreach (var assaytest in assayr.Assay.AssayTest)
+    {
+        @:<p>
+            @:Test:
+            @assaytest.Test.TestDescription
+            @:Price:
+            @assaytest.Test.BasePrice
+            assaycost += assaytest.Test.BasePrice;
+        @:</p>
+    }
+    <p>Assay Cost: @assaycost</p>
+    estimate += assaycost;
+}
+<p>Total Estimate: @estimate</p>
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>

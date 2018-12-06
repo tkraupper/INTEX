@@ -1,0 +1,57 @@
+﻿@model IEnumerable<INTEX.Models.TestTube>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Work Orders!</h2>
+
+<p>
+    @Html.ActionLink("Print Work Order List", "Print")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Sample.WorkOrder.WorkOrderID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sample.WorkOrder.Customer.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sample.WorkOrder.ConfirmationSentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sample.WorkOrder.Comments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestStatus)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sample.WorkOrder.WorkOrderID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sample.WorkOrder.Customer.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sample.WorkOrder.ConfirmationSentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sample.WorkOrder.Comments)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestStatus)
+            </td>
+            <td>
+                @Html.ActionLink("Schedule", "ScheduleTest", new { id = item.Sample.WorkOrder.WorkOrderID }) |
+            </td>
+        </tr>
+    }
+
+</table>

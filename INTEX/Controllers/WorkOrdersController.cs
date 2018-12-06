@@ -16,14 +16,14 @@ namespace INTEX
         private IntexContext db = new IntexContext();
 
         // GET: WorkOrders
-        public ActionResult Index()
+        public ActionResult WorkOrderIndex()
         {
-            var workOrders = db.WorkOrders.Include(w => w.ContactInfo).Include(w => w.Customer).Include(w => w.PayInfo).Include(w => w.Quote);
+            var workOrders = db.WorkOrders.Include(w => w.Customer);
             return View(workOrders.ToList());
         }
 
         // GET: WorkOrders/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult WorkOrderDetails(int? id)
         {
             if (id == null)
             {
@@ -34,37 +34,6 @@ namespace INTEX
             {
                 return HttpNotFound();
             }
-            return View(workOrder);
-        }
-
-        // GET: WorkOrders/Create
-        public ActionResult Create()
-        {
-            ViewBag.ContactID = new SelectList(db.ContactInfos, "ContactID", "Address");
-            ViewBag.CustomerID = new SelectList(db.Customers, "CustomerID", "Name");
-            ViewBag.PayInfoID = new SelectList(db.PayInfos, "PayInfoID", "Card");
-            ViewBag.QuoteID = new SelectList(db.Quotes, "QuoteID", "QuoteID");
-            return View();
-        }
-
-        // POST: WorkOrders/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "WorkOrderID,QuoteID,ConfirmationSentDate,CustomerID,ContactID,PayInfoID,Comments,SummaryReport")] WorkOrder workOrder)
-        {
-            if (ModelState.IsValid)
-            {
-                db.WorkOrders.Add(workOrder);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.ContactID = new SelectList(db.ContactInfos, "ContactID", "Address", workOrder.ContactID);
-            ViewBag.CustomerID = new SelectList(db.Customers, "CustomerID", "Name", workOrder.CustomerID);
-            ViewBag.PayInfoID = new SelectList(db.PayInfos, "PayInfoID", "Card", workOrder.PayInfoID);
-            ViewBag.QuoteID = new SelectList(db.Quotes, "QuoteID", "QuoteID", workOrder.QuoteID);
             return View(workOrder);
         }
 

@@ -15,21 +15,32 @@ namespace INTEX.Controllers
         public static int currentEmployee = -1;
 
 
-        public ActionResult testParent()
-        {
-            string info = "List of QuoteRequests with ArrayRequests:\n";
-            var quoters = db.QuoteRequests.ToList();
-            foreach (QuoteRequest quoter in quoters)
-            {
-                info += "QuoteRequest #" + quoter.QuoteRequestID + "\n";
-                foreach (AssayRequest assayr in quoter.AssayRequests)
-                {
-                    info += "Assay #" + assayr.AssayID + "\n";
-                }
-            }
+        //public ActionResult testParent()
+        //{
+        //    string info = "List of QuoteRequests with AssayRequests:\n";
+        //    var quoters = db.QuoteRequests.ToList();
+        //    foreach (QuoteRequest quoter in quoters)
+        //    {
+        //        info += "QuoteRequest #" + quoter.QuoteRequestID + "\n";
+        //        foreach (AssayRequest assayr in quoter.AssayRequests)
+        //        {
+        //            info += "Assay #" + assayr.AssayID + "\n";
+        //        }
+        //    }
 
-            return Content(info);
-        }
+        //    info += "\n\n\nList of Assays with QuoteRequests:\n";
+        //    var assays = db.Assays.ToList();
+        //    foreach (Assay assay in assays)
+        //    {
+        //        info += "Assay #" + assay.AssayID + ", " + assay.AssayName + ":\n";
+        //        foreach (AssayRequest assayr in assay.AssayRequest)
+        //        {
+        //            info += "QuoteRequest #" + assayr.QuoteRequestID + "\n";
+        //        }
+        //    }
+
+        //    return Content(info);
+        //}
         // HOME PAGE
         public ActionResult Index()
         {
@@ -62,25 +73,23 @@ namespace INTEX.Controllers
             }
             return View("Login");
 
-            
+
 
         }
 
-        // DISPLAY QUOTE REQUESTS
+        // DISPLAY PENDING QUOTE REQUESTS
         public ActionResult PendingQuoteRequests()
         {
-            //List<int> ids = db.Quotes.Where(null).Select(q => q.QuoteRequestID) //SqlQuery("SELECT QuoteRequestID FROM Quote");
-            //var all = db.QuoteRequests.ToList();
-            //var reqs = new List<QuoteRequest>();
-            //foreach (QuoteRequest r in all)
-            //{
-            //    foreach (int id in ids)
-            //    {
-            //        if 
-            //    }
-            //}
-            //return View(reqs);
-            return View();
+            var all = db.QuoteRequests.ToList();
+            var reqs = new List<QuoteRequest>();
+            foreach (QuoteRequest r in all)
+            {
+                if (r.Quote == null)
+                {
+                    reqs.Add(r);
+                }
+            }
+            return View(reqs);
         }
 
         // BASIC QUOTE RESPONSE PAGE
@@ -88,6 +97,9 @@ namespace INTEX.Controllers
         public ActionResult Quote(int id)
         {
             ViewBag.id = id;
+            ViewBag.quoter = db.QuoteRequests.Find(id);
+            var assayrs = db.AssayRequests.SqlQuery("select * from assayrequest where quoterequestid = " + id.ToString()).ToList();
+            ViewBag.assayrs = assayrs;
             return View();
         }
 

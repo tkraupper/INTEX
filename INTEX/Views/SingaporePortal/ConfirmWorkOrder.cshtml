@@ -1,0 +1,11 @@
+﻿@model INTEX.Models.Sample
+
+@{
+    ViewBag.Title = "ConfirmWorkOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Work Order Confirmation</h2>
+
+<p>Northwest labs received your compound and work order on @Model.DateArrived by @Model.RecievedBy . A confirmation email was sent to @Model.WorkOrder.ContactInfo.Email .</p>
+

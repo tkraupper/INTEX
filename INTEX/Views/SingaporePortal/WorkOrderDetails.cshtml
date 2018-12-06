@@ -1,0 +1,75 @@
+﻿@model INTEX.Models.WorkOrder
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>WorkOrder</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactInfo.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactInfo.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PayInfo.Card)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PayInfo.Card)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote.QuoteID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote.QuoteID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfirmationSentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfirmationSentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SummaryReport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SummaryReport)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WorkOrderID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

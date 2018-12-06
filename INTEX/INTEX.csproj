@@ -420,6 +420,8 @@
     <Content Include="Views\Home\ProtocolCatalog.cshtml" />
     <Content Include="Views\Home\PharmacologyCatalog.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\SeattlePortal\PendingQuoteRequests.cshtml" />
+    <Content Include="Views\SeattlePortal\Quote.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
