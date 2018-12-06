@@ -17,7 +17,7 @@ a new "QuoteRequest" row must be created with "QuoteRequestID" and "CustomerID".
 <div class="jumbotron">
     @using (Html.BeginForm())
     {
-        <p>Compound Type:<br /> <input type="text" name="compound"><br>@*@Html.TextBoxFor(model => model.Name)*@</p>
+        <p>Compound Type:<br /> <input type="text" name="compound"><br>@*@Html.TextBoxFor(model => model.Name)*@</p> //Have to be able to take many compounds 
         <p>Expected Date: <br /><input type="text" name="expDate"><br>@*@Html.TextBoxFor(model => model.Email)*@</p>
 
 

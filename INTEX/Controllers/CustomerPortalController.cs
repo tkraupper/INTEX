@@ -68,13 +68,13 @@ namespace INTEX.Controllers
             return View();
         }
 
-        public ActionResult ViewResults(int cID)
+        public ActionResult ViewResults(int ID)
         {
-            if (cID == null)
+            if (ID == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(cID);
+            Customer customer = db.Customers.Find(ID);
             if (customer == null)
             {
                 return HttpNotFound();

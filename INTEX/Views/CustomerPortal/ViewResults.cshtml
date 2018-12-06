@@ -1,7 +1,30 @@
-﻿@model INTEX.Models.Customer
+﻿@model INTEX.Models.WorkOrder
 @{
     ViewBag.Title = "ViewResults";
 }
 
 <h2>ViewResults</h2>
 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SummaryReport)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SummaryReport)
+            </td>
+         
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CustomerID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CustomerID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CustomerID })
+            </td>
+        </tr>
+    }
+
+</table>

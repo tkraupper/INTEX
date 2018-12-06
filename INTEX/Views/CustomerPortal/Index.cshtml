@@ -3,10 +3,12 @@
 @{
     ViewBag.Title = "Customer Portal";
 }
+<br />
+<br />
 <table style="width:85%">
     <tr>
-        <th>@Html.ActionLink("Request A Quote", "RequestQuote", new { id = Model.Customer.CustomerID }) </th>
-        <th>@Html.ActionLink("Start A New Work Order", "NewWorkOrder", new { id = Model.Customer.CustomerID }) </th>
+        <th>@Html.ActionLink("Request A Quote", "RequestQuote", new { id = Model.Customer.CustomerID }) </th> @*Steven*@
+        <th>@Html.ActionLink("Start A New Work Order", "NewWorkOrder", new { id = Model.Customer.CustomerID }) </th> 
         <th>@Html.ActionLink("Current Work Orders", "CurrentWorkOrders", new { id = Model.Customer.CustomerID }) </th>
         <th>@Html.ActionLink("View Test Results", "ViewResults", new { id = Model.Customer.CustomerID }) </th>
         <th>@Html.ActionLink("Billing", "CustomerBilling", new { id = Model.Customer.CustomerID }) </th>
