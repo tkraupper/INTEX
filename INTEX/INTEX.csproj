@@ -422,14 +422,6 @@
     <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\SeattlePortal\PendingQuoteRequests.cshtml" />
     <Content Include="Views\SeattlePortal\Quote.cshtml" />
-    <Content Include="Views\CustomerPortal\CurrentWorkOrders.cshtml" />
-    <Content Include="Views\CustomerPortal\CustomerAccount.cshtml" />
-    <Content Include="Views\CustomerPortal\CustomerBilling.cshtml" />
-    <Content Include="Views\CustomerPortal\CustomerRequestQuote.cshtml" />
-    <Content Include="Views\CustomerPortal\NewWorkOrder.cshtml" />
-    <Content Include="Views\CustomerPortal\NewWorkOrderForm.cshtml" />
-    <Content Include="Views\CustomerPortal\RequestQuote.cshtml" />
-    <Content Include="Views\CustomerPortal\ViewResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
