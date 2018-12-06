@@ -16,13 +16,13 @@ namespace INTEX
         private IntexContext db = new IntexContext();
 
         // GET: Assays
-        public ActionResult Index()
+        public ActionResult AssaysIndex()
         {
             return View(db.Assays.ToList());
         }
 
         // GET: Assays/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult AssaysDetails(int? id)
         {
             if (id == null)
             {
@@ -37,7 +37,7 @@ namespace INTEX
         }
 
         // GET: Assays/Create
-        public ActionResult Create()
+        public ActionResult AssaysCreate()
         {
             return View();
         }
@@ -47,7 +47,7 @@ namespace INTEX
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AssayID,AssayName,AssayDetails,TimeEstimate,LiteratureReferences")] Assay assay)
+        public ActionResult AssaysCreate([Bind(Include = "AssayID,AssayName,AssayDetails,TimeEstimate,LiteratureReferences")] Assay assay)
         {
             if (ModelState.IsValid)
             {
@@ -60,7 +60,7 @@ namespace INTEX
         }
 
         // GET: Assays/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult AssaysEdit(int? id)
         {
             if (id == null)
             {
@@ -79,7 +79,7 @@ namespace INTEX
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AssayID,AssayName,AssayDetails,TimeEstimate,LiteratureReferences")] Assay assay)
+        public ActionResult AssaysEdit([Bind(Include = "AssayID,AssayName,AssayDetails,TimeEstimate,LiteratureReferences")] Assay assay)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace INTEX
         }
 
         // GET: Assays/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult AssaysDelete(int? id)
         {
             if (id == null)
             {
@@ -108,7 +108,7 @@ namespace INTEX
         // POST: Assays/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult AssaysDeleteConfirmed(int id)
         {
             Assay assay = db.Assays.Find(id);
             db.Assays.Remove(assay);

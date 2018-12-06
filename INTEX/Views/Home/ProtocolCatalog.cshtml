@@ -5,11 +5,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ProtocolCatalog</h2>
+<h2>Protocol Catalog</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -19,12 +16,14 @@
             @Html.DisplayNameFor(model => model.AssayDetails)
         </th>
         <th>
+            Materials Used in assay
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.TimeEstimate)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.LiteratureReferences)
         </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -36,15 +35,20 @@
             @Html.DisplayFor(modelItem => item.AssayDetails)
         </td>
         <td>
+            @foreach (var assaytest in item.AssayTest)
+            {
+                @:<p>Test: @assaytest.Test.TestDescription</p>
+                foreach (var testmat in assaytest.Test.TestMaterial)
+                {
+                    @:<p>Material: @testmat.Material.MaterialName Quantity: @testmat.QuantityUsed</p>
+                }
+            }
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.TimeEstimate)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.LiteratureReferences)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AssayID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AssayID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AssayID })
         </td>
     </tr>
 }

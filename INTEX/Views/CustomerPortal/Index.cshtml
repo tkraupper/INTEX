@@ -1,10 +1,21 @@
 ﻿@model INTEX.Models.CustomerCustomerCredentials
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Customer Portal";
 }
+<table style="width:85%">
+    <tr>
+        <th>@Html.ActionLink("Request A Quote", "RequestQuote") </th>
+        <th>@Html.ActionLink("See Quotes", "Quotes") </th>
+        <th>@Html.ActionLink("Status of Active Work Orders", "WorkOrderStatus") </th>
+        <th>@Html.ActionLink("View Test Results", "ViewResults") </th>
+        <th>@Html.ActionLink("Pay a Bill", "ViewBills") </th>
+        <th>@Html.ActionLink("Edit Account Information", "EditAccount") </th>
+    </tr>
+</table>
 
-<h2>Index</h2>
+
+<h2>Welcome @Html.DisplayFor(model => model.CustomerCredentials.Username) to your customer portal. </h2>
 
 <div>
     <h4>CustomerCredentials</h4>

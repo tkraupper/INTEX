@@ -1,0 +1,90 @@
+﻿@model IEnumerable<INTEX.Models.TestTube>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Test Tubes List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "TestTubesCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TestTubeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sample.CompoundSequenceCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sample.LTNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sample.DateArrived)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Test.TestDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActualCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestStatus)
+        </th>
+        <th>
+            Record Results
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TestTubeID)
+        </td>
+        <td>
+            1
+            @*@Html.DisplayFor(modelItem => item.CompoundSequenceCode) these didn't pass values correctly so we will check this out later*@
+        </td>
+        <td>
+            1
+            @*@Html.DisplayFor(modelItem => item.LTNumber) these didn't pass values correctly so we will check this out later*@
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sample.DateArrived)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TestID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Test.TestDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActualCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TestDateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TestStatus)
+        </td>
+        <td>
+            @Html.ActionLink("Record Results", "RecordTestResults", "SingaporePortal", new { id = item.TestTubeID })
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "TestTubesEdit", new { id = item.TestTubeID }) |
+            @Html.ActionLink("Details", "TestTubesDetails", new { id = item.TestTubeID }) |
+            @Html.ActionLink("Delete", "TestTubesDelete", new { id = item.TestTubeID })
+        </td>
+    </tr>
+}
+
+</table>

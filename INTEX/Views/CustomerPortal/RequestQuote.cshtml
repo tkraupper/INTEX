@@ -1,0 +1,59 @@
+﻿@model INTEX.Models.QuoteRequest
+
+@{
+    ViewBag.Title = "Request Quote";
+}
+
+<ul class="breadcrumb">
+    <li><a href=@Url.Action("Index")>Home</a></li>
+    <li class="active">Request Quote</li>
+</ul>
+
+<h4>Assays currently on request:</h4>
+
+@foreach (var assayr in ViewBag.cart)
+{
+    @:<p>@assayr.Assay.AssayName for @assayr.Compound.CompoundName</p>
+}
+
+
+@Html.ActionLink("Add Assays to Request", "SelectAssay")
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit Quote Request" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+
+@*<h2>Request A Quote</h2>
+
+    @*Form text needs to be sent with the customer ID as an email to the sales rep who owns the customer ID. When form is submitted,
+        a new "QuoteRequest" row must be created with "QuoteRequestID" and "CustomerID".*@
+
+@*<div class="card">
+        <div class="card-body" style="background-color: #f8f9fa">
+            <p>Please fill out the form below and submit, we will contact you within 14 days. If you have questions feel free to reach out at info@northwestlabs.com or 801-555-5555.</p>
+        </div>
+    </div>
+    <br />
+    <div class="jumbotron">
+        @using (Html.BeginForm())
+        {*@
+@*<p>Compound Type:<br /> <input type="text" name="compound"><br>@Html.TextBoxFor(model => model.Name)</p>
+    <p>Expected Date: <br /><input type="text" name="expDate"><br>@Html.TextBoxFor(model => model.Email)</p>*@
+
+
+@*<p>Description and Supplementary Notes:<br /> @Html.TextArea("Body", null, new { cols = "200", rows = "10" })</p>
+            <input type="submit" value="Submit" />
+        }
+    </div>*@
+
