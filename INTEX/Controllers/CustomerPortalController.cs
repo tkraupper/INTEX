@@ -13,7 +13,7 @@ namespace INTEX.Controllers
     {
         public IntexContext db = new IntexContext();
 
-        public static int currentCustomer;
+        public static int currentCustomer = -1;
 
         // GET: Client
         public ActionResult Index()
@@ -68,18 +68,23 @@ namespace INTEX.Controllers
             return View();
         }
 
-        public ActionResult ViewResults(int cID)
+        public ActionResult WorkOrderStatus(int id)
         {
-            if (cID == null)
+            if (currentCustomer == -1)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("Login");
             }
-            Customer customer = db.Customers.Find(cID);
+            Customer customer = db.Customers.Find(currentCustomer);
             if (customer == null)
             {
-                return HttpNotFound();
+                return RedirectToAction("Login");
             }
-            return View(customer);
+            WorkOrder worder = db.WorkOrders.Find(id);
+            if (worder.CustomerID != currentCustomer)
+            {
+                return RedirectToAction("CurrentWorkOrders");
+            }
+            return View(worder);
 
             
         }

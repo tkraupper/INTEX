@@ -59,5 +59,7 @@ namespace INTEX.Models
 
         [DisplayName("Analysis Report")]
         public string AnalysisReport { get; set; }
+
+        public virtual ICollection<TestTube> TestTube { get; set; }
     }
 }

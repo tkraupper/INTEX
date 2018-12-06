@@ -385,11 +385,6 @@
     <Content Include="Views\QuoteRequests\Details.cshtml" />
     <Content Include="Views\QuoteRequests\Edit.cshtml" />
     <Content Include="Views\QuoteRequests\Index.cshtml" />
-    <Content Include="Views\Samples\Create.cshtml" />
-    <Content Include="Views\Samples\Delete.cshtml" />
-    <Content Include="Views\Samples\Details.cshtml" />
-    <Content Include="Views\Samples\Edit.cshtml" />
-    <Content Include="Views\Samples\Index.cshtml" />
     <Content Include="Views\Tests\Create.cshtml" />
     <Content Include="Views\Tests\Delete.cshtml" />
     <Content Include="Views\Tests\Details.cshtml" />
@@ -409,7 +404,6 @@
     <Content Include="Views\WorkOrders\Delete.cshtml" />
     <Content Include="Views\WorkOrders\Details.cshtml" />
     <Content Include="Views\WorkOrders\Edit.cshtml" />
-    <Content Include="Views\WorkOrders\Index.cshtml" />
     <Content Include="Views\Payments\Create.cshtml" />
     <Content Include="Views\Payments\Delete.cshtml" />
     <Content Include="Views\Payments\Details.cshtml" />
@@ -430,6 +424,32 @@
     <Content Include="Views\CustomerPortal\NewWorkOrderForm.cshtml" />
     <Content Include="Views\CustomerPortal\RequestQuote.cshtml" />
     <Content Include="Views\CustomerPortal\ViewResults.cshtml" />
+    <Content Include="Views\Samples\SamplesCreate.cshtml" />
+    <Content Include="Views\Samples\SamplesDelete.cshtml" />
+    <Content Include="Views\Samples\SamplesDetails.cshtml" />
+    <Content Include="Views\Samples\SamplesEdit.cshtml" />
+    <Content Include="Views\Samples\SamplesIndex.cshtml" />
+    <Content Include="Views\SingaporePortal\ActiveWorkOrderIndex.cshtml" />
+    <Content Include="Views\SingaporePortal\ConfirmWorkOrder.cshtml" />
+    <Content Include="Views\SingaporePortal\SamplesCreate.cshtml" />
+    <Content Include="Views\SingaporePortal\SamplesDelete.cshtml" />
+    <Content Include="Views\SingaporePortal\SamplesDetails.cshtml" />
+    <Content Include="Views\SingaporePortal\SamplesEdit.cshtml" />
+    <Content Include="Views\SingaporePortal\SamplesIndex.cshtml" />
+    <Content Include="Views\SingaporePortal\ScheduleTest.cshtml" />
+    <Content Include="Views\SingaporePortal\WorkOrderDelete.cshtml" />
+    <Content Include="Views\SingaporePortal\WorkOrderDetails.cshtml" />
+    <Content Include="Views\SingaporePortal\WorkOrderEdit.cshtml" />
+    <Content Include="Views\SingaporePortal\WorkOrderIndex.cshtml" />
+    <Content Include="Views\WorkOrders\WorkOrderIndex.cshtml" />
+    <Content Include="Views\SeattlePortal\WONeedingReports.cshtml" />
+    <Content Include="Views\CustomerPortal\WorkOrderStatus.cshtml" />
+    <Content Include="Views\SeattlePortal\ReportWorkOrder.cshtml" />
+    <Content Include="Views\SeattlePortal\WONeedingPricing.cshtml" />
+    <Content Include="Views\SeattlePortal\PriceWorkOrder.cshtml" />
+    <Content Include="Views\SeattlePortal\WONeedingBilling.cshtml" />
+    <Content Include="Views\SeattlePortal\BillWorkOrder.cshtml" />
+    <Content Include="Views\SeattlePortal\ViewReports.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
