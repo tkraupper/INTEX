@@ -35,5 +35,7 @@ namespace INTEX.Models
 
         [DisplayName("Summary Report")]
         public string SummaryReport { get; set; }
+
+        public virtual ICollection<Sample> Sample { get; set; }
     }
 }
