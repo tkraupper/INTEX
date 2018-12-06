@@ -15,22 +15,19 @@
             @Html.DisplayNameFor(model => model.Assay.AssayName)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.CompoundSequenceCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LTNumber)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Compound.CompoundName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ActualWeight)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.QuantityInMilligrams)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.DateArrived)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateDue)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Appearance)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.MolecularMass)
@@ -50,22 +47,19 @@
             @Html.DisplayFor(modelItem => item.Assay.AssayName)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.CompoundSequenceCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LTNumber)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Compound.CompoundName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ActualWeight)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.QuantityInMilligrams)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.DateArrived)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateDue)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Appearance)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.MolecularMass)
@@ -74,10 +68,10 @@
             @Html.DisplayFor(modelItem => item.MTD)
         </td>
         <td>
-            @Html.ActionLink("Add Test Tube", "TestTubesIndex", new { id = item.CompoundSequenceCode }, new { cpk = item.LTNumber })
+            @Html.ActionLink("View Associated Test Tubes", "TestTubesIndex", new { id = item.CompoundSequenceCode }, new { cpk = item.LTNumber })
         </td>
         <td>
-            @Html.ActionLink("Edit", "SamplesEdit", new { id=item.CompoundSequenceCode }, new { cpk=item.LTNumber}) |
+            @Html.ActionLink("Edit", "SamplesEdit", new { id = item.CompoundSequenceCode }, new { cpk = item.LTNumber }) |
             @Html.ActionLink("Details", "SamplesDetails", new { id = item.CompoundSequenceCode }, new { cpk = item.LTNumber }) |
             @Html.ActionLink("Delete", "SamplesDelete", new { id = item.CompoundSequenceCode }, new { cpk = item.LTNumber })
         </td>

@@ -454,6 +454,7 @@
     <Content Include="Views\SingaporePortal\AssaysDetails.cshtml" />
     <Content Include="Views\SingaporePortal\AssaysEdit.cshtml" />
     <Content Include="Views\SingaporePortal\AssaysIndex.cshtml" />
+    <Content Include="Views\SingaporePortal\RecordTestResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

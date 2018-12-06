@@ -500,6 +500,21 @@ namespace INTEX.Controllers
             return RedirectToAction("TestTubesIndex");
         }
 
+        //TestTubes method to record test results
+        public ActionResult RecordTestResults(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            TestTube testTube = db.TestTubes.Find(id);
+            if (testTube == null)
+            {
+                return HttpNotFound();
+            }
+            return View(testTube);
+        }
+
 
 
 
