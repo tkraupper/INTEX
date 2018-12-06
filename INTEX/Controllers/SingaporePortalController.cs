@@ -17,9 +17,11 @@ namespace INTEX.Controllers
         //VARIABLES
         private IntexContext db = new IntexContext();
         public static List<TestTube> activeList = new List<TestTube>();
+        public static List<Sample> associatedSampleList = new List<Sample>();
         public static int currentEmployee = -1;
         public static int currentCompoundSequenceCode = -1;
         public static int currentLTNumber = -1;
+        public static int currentWorkOrderID = -1;
 
 
 
@@ -178,14 +180,23 @@ namespace INTEX.Controllers
 
 
         // GET: Samples
-        public ActionResult SamplesIndex()
+        public ActionResult SamplesIndex(int? id)
         {
             var samples = db.Samples.Include(s => s.Assay).Include(s => s.Compound).Include(s => s.WorkOrder);
-            return View(samples.ToList());
+
+            foreach (var item in samples.ToList())
+            {
+                if (item.WorkOrderID == id)
+                {
+                    currentWorkOrderID = Convert.ToInt32(id);
+                    associatedSampleList.Add(item);
+                }
+            }
+            return View(associatedSampleList);
         }
 
         // GET: Samples/Details/5
-        public ActionResult SamplesDetails(int? id)
+        public ActionResult SamplesDetails(int? id, int? cpk)
         {
             if (id == null)
             {
@@ -200,11 +211,13 @@ namespace INTEX.Controllers
         }
 
         // GET: Samples/Create
-        public ActionResult SamplesCreate()
+        public ActionResult SamplesCreate(int id)
         {
             ViewBag.AssayID = new SelectList(db.Assays, "AssayID", "AssayName");
             ViewBag.LTNumber = new SelectList(db.Compounds, "LTNumber", "CompoundName");
             ViewBag.WorkOrderID = new SelectList(db.WorkOrders, "WorkOrderID", "ConfirmationSentDate");
+
+            ViewBag.workit = db.WorkOrders.Find(id);
             return View();
         }
 
@@ -229,7 +242,7 @@ namespace INTEX.Controllers
         }
 
         // GET: Samples/Edit/5
-        public ActionResult SamplesEdit(int? id)
+        public ActionResult SamplesEdit(int? id, int? cpk)
         {
             if (id == null)
             {
@@ -266,7 +279,7 @@ namespace INTEX.Controllers
         }
 
         // GET: Samples/Delete/5
-        public ActionResult SamplesDelete(int? id)
+        public ActionResult SamplesDelete(int? id, int? cpk)
         {
             if (id == null)
             {
@@ -283,7 +296,7 @@ namespace INTEX.Controllers
         // POST: Samples/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult SamplesDeleteConfirmed(int id)
+        public ActionResult SamplesDeleteConfirmed(int id, int cpk)
         {
             Sample sample = db.Samples.Find(id);
             db.Samples.Remove(sample);
@@ -298,10 +311,10 @@ namespace INTEX.Controllers
         //SCHEDULED AND TAKES THE ONES WITH THIS STATUS AND MAKES A LIST TO BE PRINTED OR SO THEY CAN BE SCHEDULED
         public ActionResult ActiveWorkOrderIndex()
         {
-            var testTubes = db.TestTubes.Include(t => t.Sample);
-            foreach (var item in activeList)
+            var workOrders = db.WorkOrders.Include(t => t.Sample);
+            foreach (var item in workOrders.ToList())
             {
-                if (item.TestStatus == "Received")
+                if (item.Sample.CompoundSequenceCode == null)
                 {
                     activeList.Add(item);
                 }
@@ -310,30 +323,6 @@ namespace INTEX.Controllers
             return View(activeList);
         }
 
-        ////method
-        //[HttpGet]
-        //public ActionResult SamplesIndex(int? CompNumber, int? LTNumber)
-        //{
-        //    List<Sample> samplesList = db.Samples.ToList();
-        //    foreach (Sample samps in samplesList)
-        //    {
-        //        if (CompNumber == null || LTNumber == null)
-        //        {
-        //            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //        }
-
-        //        Sample sample = db.Samples.Find(currentCompoundSequenceCode, currentLTNumber);
-
-        //        else if (CompNumber == samps.CompoundSequenceCode && LTNumber == samps.LTNumber)
-        //        {
-        //            currentLTNumber = samps.LTNumber;
-        //            currentCompoundSequenceCode = samps.CompoundSequenceCode;
-        //            return RedirectToAction("SamplesIndex", "SingaporePortal", sample);
-        //        }
-        //    }
-
-        //    return View("WorkOrderIndex");
-        //}
 
         //THIS METHOD TAKES YOU TO A VIEW THAT WILL LET YOU SCHEDULE THE INDIVIDUAL TESTS FOR A WORK ORDER
         [HttpGet]

@@ -411,6 +411,18 @@
     <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\SeattlePortal\PendingQuoteRequests.cshtml" />
     <Content Include="Views\SeattlePortal\Quote.cshtml" />
+    <Content Include="Views\SingaporePortal\ActiveWorkOrderIndex.cshtml" />
+    <Content Include="Views\SingaporePortal\ConfirmWorkOrder.cshtml" />
+    <Content Include="Views\SingaporePortal\SamplesCreate.cshtml" />
+    <Content Include="Views\SingaporePortal\SamplesDelete.cshtml" />
+    <Content Include="Views\SingaporePortal\SamplesDetails.cshtml" />
+    <Content Include="Views\SingaporePortal\SamplesEdit.cshtml" />
+    <Content Include="Views\SingaporePortal\SamplesIndex.cshtml" />
+    <Content Include="Views\SingaporePortal\ScheduleTest.cshtml" />
+    <Content Include="Views\SingaporePortal\WorkOrderDelete.cshtml" />
+    <Content Include="Views\SingaporePortal\WorkOrderDetails.cshtml" />
+    <Content Include="Views\SingaporePortal\WorkOrderEdit.cshtml" />
+    <Content Include="Views\SingaporePortal\WorkOrderIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

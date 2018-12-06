@@ -15,14 +15,14 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.WorkOrderID, "WorkOrderID", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.WorkOrderID)
+        <div class="col-md-9">
+            @ViewBag.workit.WorkOrderID
         </div>
     </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.CompoundSequenceCode, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        <div class="col-md-9">
             @Html.EditorFor(model => model.CompoundSequenceCode, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.CompoundSequenceCode, "", new { @class = "text-danger" })
         </div>
@@ -30,7 +30,7 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.LTNumber, "LTNumber", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        <div class="col-md-9">
             @Html.EditorFor(model => model.LTNumber, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.LTNumber, "", new { @class = "text-danger" })
         </div>
@@ -38,7 +38,7 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.AssayID, "AssayID", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        <div class="col-md-9">
             @Html.DropDownList("AssayID", null, htmlAttributes: new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.AssayID, "", new { @class = "text-danger" })
         </div>
@@ -46,7 +46,7 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.IndicatedWeight, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        <div class="col-md-9">
             @Html.EditorFor(model => model.IndicatedWeight, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.IndicatedWeight, "", new { @class = "text-danger" })
         </div>
@@ -54,7 +54,7 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.ActualWeight, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        <div class="col-md-9">
             @Html.EditorFor(model => model.ActualWeight, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.ActualWeight, "", new { @class = "text-danger" })
         </div>
@@ -62,7 +62,7 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.QuantityInMilligrams, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        <div class="col-md-9">
             @Html.EditorFor(model => model.QuantityInMilligrams, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.QuantityInMilligrams, "", new { @class = "text-danger" })
         </div>
@@ -70,7 +70,7 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.DateArrived, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        <div class="col-md-9">
             @Html.EditorFor(model => model.DateArrived, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.DateArrived, "", new { @class = "text-danger" })
         </div>
@@ -78,7 +78,7 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.RecievedBy, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        <div class="col-md-9">
             @Html.EditorFor(model => model.RecievedBy, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.RecievedBy, "", new { @class = "text-danger" })
         </div>
@@ -86,7 +86,7 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.DateDue, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        <div class="col-md-9">
             @Html.EditorFor(model => model.DateDue, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.DateDue, "", new { @class = "text-danger" })
         </div>
@@ -94,7 +94,7 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.Appearance, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        <div class="col-md-9">
             @Html.EditorFor(model => model.Appearance, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Appearance, "", new { @class = "text-danger" })
         </div>
@@ -102,7 +102,7 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.MolecularMass, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        <div class="col-md-9">
             @Html.EditorFor(model => model.MolecularMass, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.MolecularMass, "", new { @class = "text-danger" })
         </div>
@@ -110,7 +110,7 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.MTD, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        <div class="col-md-9">
             @Html.EditorFor(model => model.MTD, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.MTD, "", new { @class = "text-danger" })
         </div>
@@ -118,7 +118,7 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.SecondaryTestingApproval, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        <div class="col-md-9">
             <div class="checkbox">
                 @Html.EditorFor(model => model.SecondaryTestingApproval)
                 @Html.ValidationMessageFor(model => model.SecondaryTestingApproval, "", new { @class = "text-danger" })
@@ -127,7 +127,7 @@
     </div>
 
     <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
+        <div class="col-md-offset-2 col-md-9">
             <input type="submit" value="Create" class="btn btn-default" />
         </div>
     </div>
@@ -135,7 +135,10 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Samples List", "SamplesIndex")
+</div>
+<div>
+    @Html.ActionLink("Back to Work Orders List", "WorkOrderIndex")
 </div>
 
 @section Scripts {
