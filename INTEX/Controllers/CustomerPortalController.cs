@@ -99,6 +99,8 @@ namespace INTEX.Controllers
                 }
                 db.QuoteRequests.Add(quoteRequest);
                 db.SaveChanges();
+                ViewBag.id = quoteRequest.QuoteRequestID;
+                ViewBag.cust = db.Customers.Find(currentCustomer);
                 return View("Confirmation");//Add Confirmation View
             }
             return View("Index");
