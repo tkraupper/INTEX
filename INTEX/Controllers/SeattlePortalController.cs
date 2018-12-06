@@ -15,18 +15,29 @@ namespace INTEX.Controllers
         public static int currentEmployee = -1;
 
 
-        //public ActionResult testParent()
-        //{
-        //    string info = "List of QuoteRequests with AssayRequests:\n";
-        //    var quoters = db.QuoteRequests.ToList();
-        //    foreach (QuoteRequest quoter in quoters)
-        //    {
-        //        info += "QuoteRequest #" + quoter.QuoteRequestID + "\n";
-        //        foreach (AssayRequest assayr in quoter.AssayRequests)
-        //        {
-        //            info += "Assay #" + assayr.AssayID + "\n";
-        //        }
-        //    }
+        public ActionResult testParent()
+        {
+            //    string info = "List of QuoteRequests with AssayRequests:\n";
+            //    var quoters = db.QuoteRequests.ToList();
+            //    foreach (QuoteRequest quoter in quoters)
+            //    {
+            //        info += "QuoteRequest #" + quoter.QuoteRequestID + "\n";
+            //        foreach (AssayRequest assayr in quoter.AssayRequests)
+            //        {
+            //            info += "Assay #" + assayr.AssayID + "\n";
+            //        }
+            //    }
+
+            string info = "all samples with testtubes:\n\n";
+            var worders = db.WorkOrders.ToList();
+            foreach (WorkOrder w in worders)
+            {
+                info += "Work Order #" + w.WorkOrderID + "\n\n";
+                foreach (Sample s in w.Sample)
+                {
+                    info += "Sample #" + s.LTNumber + "-" + s.CompoundSequenceCode + "\n";
+                }
+            }
 
         //    info += "\n\n\nList of Assays with QuoteRequests:\n";
         //    var assays = db.Assays.ToList();
@@ -39,8 +50,8 @@ namespace INTEX.Controllers
         //        }
         //    }
 
-        //    return Content(info);
-        //}
+            return Content(info);
+        }
         // HOME PAGE
         public ActionResult Index()
         {

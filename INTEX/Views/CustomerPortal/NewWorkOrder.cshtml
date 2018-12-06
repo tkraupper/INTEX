@@ -1,0 +1,24 @@
+﻿@model INTEX.Models.CustomerCustomerCredentials
+
+@{
+    ViewBag.Title = "NewWorkOrder";
+}
+
+<h2>Start A New Work Order</h2>
+
+<div class="card">
+    <div class="card-body" style="background-color: #f8f9fa">
+        <p>Please enter your QuoteID to continue</p>
+    </div>
+</div>
+<div class="jumbotron">
+    @using (Html.BeginForm("NewWorkOrderForm","CustomerPortal")) //Need to send parameters: QuoteID, CustomerID
+    {
+        <p>QuoteID:<br /> <input type="text" name="QuoteID"><br>@*@Html.TextBoxFor(model => model.Name)*@</p>
+
+        <input type="submit" value="Submit" onclick="" />
+
+        <p>
+            If you haven't requested a quote yet, please do so here @Html.ActionLink("Request A Quote", "RequestQuote", null, new {  @class = "btn btn-primary btn-large"})</p>
+}
+</div>

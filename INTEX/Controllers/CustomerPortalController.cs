@@ -3,6 +3,7 @@ using INTEX.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -44,6 +45,53 @@ namespace INTEX.Controllers
                 }
             }
             return View("Login");
+        }
+
+
+        public ActionResult RequestQuote()
+        {
+            return View();
+        }
+
+        public ActionResult NewWorkOrder()
+        {
+            return View();
+        }
+
+        public ActionResult NewWorkOrderForm()
+        {
+            return View();
+        }
+
+        public ActionResult CurrentWorkOrders()
+        {
+            return View();
+        }
+
+        public ActionResult ViewResults(int cID)
+        {
+            if (cID == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Customer customer = db.Customers.Find(cID);
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
+            return View(customer);
+
+            
+        }
+
+        public ActionResult CustomerBilling()
+        {
+            return View();
+        }
+
+        public ActionResult CustomerAccount()
+        {
+            return View();
         }
     }
 }
