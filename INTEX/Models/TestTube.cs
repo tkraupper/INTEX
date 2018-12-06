@@ -24,6 +24,7 @@ namespace INTEX.Models
 
         [DisplayName("Test ID")]
         public int TestID { get; set; }
+        public virtual Test Test { get; set; }
 
         [DisplayName("Actual Cost")]
         public decimal ActualCost { get; set; }
