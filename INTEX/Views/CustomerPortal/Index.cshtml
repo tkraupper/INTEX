@@ -5,12 +5,12 @@
 }
 <table style="width:85%">
     <tr>
-        <th>@Html.ActionLink("Request A Quote", "RequestQuote", new { id = Model.Customer.CustomerID }) </th>
-        <th>@Html.ActionLink("Start A New Work Order", "NewWorkOrder", new { id = Model.Customer.CustomerID }) </th>
-        <th>@Html.ActionLink("Current Work Orders", "CurrentWorkOrders", new { id = Model.Customer.CustomerID }) </th>
-        <th>@Html.ActionLink("View Test Results", "ViewResults", new { id = Model.Customer.CustomerID }) </th>
-        <th>@Html.ActionLink("Billing", "CustomerBilling", new { id = Model.Customer.CustomerID }) </th>
-        <th>@Html.ActionLink("Customer Account Information", "CustomerAccount", new { id = Model.Customer.CustomerID }) </th>
+        <th>@Html.ActionLink("Request A Quote", "RequestQuote") </th>
+        <th>@Html.ActionLink("See Quotes", "Quotes") </th>
+        <th>@Html.ActionLink("Status of Active Work Orders", "WorkOrderStatus") </th>
+        <th>@Html.ActionLink("View Test Results", "ViewResults") </th>
+        <th>@Html.ActionLink("Pay a Bill", "ViewBills") </th>
+        <th>@Html.ActionLink("Edit Account Information", "EditAccount") </th>
     </tr>
 </table>
 

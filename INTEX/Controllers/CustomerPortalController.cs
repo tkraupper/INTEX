@@ -13,23 +13,29 @@ namespace INTEX.Controllers
     {
         public IntexContext db = new IntexContext();
 
+        public static List<AssayRequest> cart = new List<AssayRequest>();
+
         public static int currentCustomer = -1;
 
         // GET: Client
         public ActionResult Index()
         {
+            if (currentCustomer == -1)
+            {
+                return View("Login");
+            }
             CustomerCustomerCredentials cust = new CustomerCustomerCredentials();
             cust.CustomerCredentials = db.CustomerCredential.Find(currentCustomer);
             cust.Customer = db.Customers.Find(currentCustomer);
-            if (cust.CustomerCredentials == null || cust.Customer == null) { return Content("Fail"); }
+            if (cust.CustomerCredentials == null || cust.Customer == null) { return View("Login"); }
             return View(cust);
         }
-
+        
         //LOGIN METHODS FOR THE CUSTOMER
         [HttpGet]
         public ActionResult Login()
         {
-            return View("Login");
+            return View();
         }
 
         [HttpPost]
@@ -44,57 +50,96 @@ namespace INTEX.Controllers
                     return RedirectToAction("Index");
                 }
             }
-            return View("Login");
+            return View();
         }
 
-
+        //Start of Quote Request Section
         public ActionResult RequestQuote()
         {
             return View();
         }
 
-        public ActionResult NewWorkOrder()
+        public ActionResult SelectAssay()
         {
             return View();
         }
 
-        public ActionResult NewWorkOrderForm()
+        public ActionResult SelectCompound()
         {
+            return View();//Some point in here needs a confirmation page/email.
+        }
+        //End of Quote Request Section
+
+        //Start of Work Order Creation Section
+        //Shows quotes, button to make each one a work order
+        public ActionResult Quotes()
+        {
+            return View(db.Quotes.ToList());
+        }
+
+        public ActionResult AddWorkOrder(int id)
+        {
+            ViewBag.Quote = db.Quotes.Find(id);
             return View();
         }
 
-        public ActionResult CurrentWorkOrders()
+        public ActionResult AddWorkOrder(WorkOrder worder)
         {
-            return View();
-        }
-
-        public ActionResult WorkOrderStatus(int id)
-        {
-            if (currentCustomer == -1)
+            if (ModelState.IsValid)
             {
-                return RedirectToAction("Login");
+                db.WorkOrders.Add(worder);
+                return View("WorkOrderAdded");//Add view with confirmation.
             }
-            Customer customer = db.Customers.Find(currentCustomer);
-            if (customer == null)
-            {
-                return RedirectToAction("Login");
-            }
-            WorkOrder worder = db.WorkOrders.Find(id);
-            if (worder.CustomerID != currentCustomer)
-            {
-                return RedirectToAction("CurrentWorkOrders");
-            }
-            return View(worder);
+            return View();
+        }
+        //End of Work Order Creation Section
 
-            
+        public ActionResult WorkOrderStatus()
+        {
+            return View(db.WorkOrders.ToList());  
         }
 
-        public ActionResult CustomerBilling()
+        public ActionResult GetReports()
+        {
+            return View(db.WorkOrders.ToList());
+        }
+
+        public ActionResult SummaryReport()
+        {
+            return File("~/Content/SummaryExample.pdf", "application/pdf");
+        }
+
+        public ActionResult DataReport()
+        {
+            return File("~/Content/DataExample.pdf", "application/pdf");
+        }
+
+        //Start of Bill Payment Process
+        public ActionResult ViewBills()
         {
             return View();
         }
 
-        public ActionResult CustomerAccount()
+        public ActionResult PayBill()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult PayBill(Payment payment)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Payments.Add(payment);
+                db.SaveChanges();
+                return RedirectToAction("ViewBills");
+            }
+            return View("PayBill", payment);
+        }
+        //End of Bill Payment Process
+
+
+        public ActionResult EditAccount()
         {
             return View();
         }

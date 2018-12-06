@@ -301,7 +301,7 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\OldCustomer\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
@@ -454,6 +454,30 @@
     <Content Include="Views\SingaporePortal\AssaysDetails.cshtml" />
     <Content Include="Views\SingaporePortal\AssaysEdit.cshtml" />
     <Content Include="Views\SingaporePortal\AssaysIndex.cshtml" />
+    <Content Include="Views\OldCustomer\CurrentWorkOrders.cshtml" />
+    <Content Include="Views\CustomerPortal\EditAccount.cshtml" />
+    <Content Include="Views\CustomerPortal\ViewBills.cshtml" />
+    <Content Include="Views\OldCustomer\CustomerRequestQuote.cshtml" />
+    <Content Include="Views\OldCustomer\NewWorkOrder.cshtml" />
+    <Content Include="Views\OldCustomer\NewWorkOrderForm.cshtml" />
+    <Content Include="Views\CustomerPortal\RequestQuote.cshtml" />
+    <Content Include="Views\OldCustomer\ViewResults.cshtml" />
+    <Content Include="Views\CustomerPortal\WorkOrderStatus.cshtml" />
+    <Content Include="Views\Samples\SamplesCreate.cshtml" />
+    <Content Include="Views\Samples\SamplesDelete.cshtml" />
+    <Content Include="Views\Samples\SamplesDetails.cshtml" />
+    <Content Include="Views\Samples\SamplesEdit.cshtml" />
+    <Content Include="Views\Samples\SamplesIndex.cshtml" />
+    <Content Include="Views\SeattlePortal\BillWorkOrder.cshtml" />
+    <Content Include="Views\SeattlePortal\PriceWorkOrder.cshtml" />
+    <Content Include="Views\SeattlePortal\ReportWorkOrder.cshtml" />
+    <Content Include="Views\SeattlePortal\ViewReports.cshtml" />
+    <Content Include="Views\SeattlePortal\WONeedingBilling.cshtml" />
+    <Content Include="Views\SeattlePortal\WONeedingPricing.cshtml" />
+    <Content Include="Views\SeattlePortal\WONeedingReports.cshtml" />
+    <Content Include="Views\WorkOrders\WorkOrderIndex.cshtml" />
+    <Content Include="Views\CustomerPortal\PayBill.cshtml" />
+    <Content Include="Views\CustomerPortal\GetReports.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

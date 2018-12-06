@@ -1,8 +1,45 @@
-﻿@model INTEX.Models.WorkOrder
+﻿@model IEnumerable<INTEX.Models.WorkOrder>
 
 @{
     ViewBag.Title = "WorkOrderStatus";
 }
 
-<h2>WorkOrderStatus</h2>
+<ul class="breadcrumb">
+    <li><a href=@Url.Action("Index")>Home</a></li>
+    <li class="active">Work Order Status</li>
+</ul>
 
+<h2>This view will show a work order and test statuses.</h2>
+
+<table class="table">
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                Work Order #@item.WorkOrderID
+            </td>
+            <td>
+                <p>Assays:</p>
+                <ul>
+                    @foreach (var s in item.Sample)
+                    {
+                        @:<li>
+                            @:<ul>
+                                @:Testing Compound @s.Compound.CompoundName
+                                @:with Assay @s.Assay.AssayName
+
+                                foreach (var t in s.TestTube)
+                                {
+                                @:
+                                @:<li>@t.Test.TestDescription Test Status: @t.TestStatus</li>
+                                }
+                            @:</ul>
+                        @:</li>
+                    }
+                </ul>
+            </td>
+        </tr>
+    }
+
+</table>

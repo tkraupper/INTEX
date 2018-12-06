@@ -3,6 +3,11 @@
     ViewBag.Title = "Request Quote";
 }
 
+<ul class="breadcrumb">
+    <li><a href=@Url.Action("Index")>Home</a></li>
+    <li class="active">Request Quote</li>
+</ul>
+
 <h2>Request A Quote</h2>
 
 @*Form text needs to be sent with the customer ID as an email to the sales rep who owns the customer ID. When form is submitted, 
