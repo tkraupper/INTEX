@@ -1,0 +1,66 @@
+﻿@model INTEX.Models.TestTube
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Test Tube Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Sample.DateArrived)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sample.DateArrived)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActualCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActualCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestDateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Predecessor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Predecessor)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "TestTubesEdit", new { id = Model.TestTubeID }) |
+    @Html.ActionLink("Back to List", "TestTubesIndex")
+</p>

@@ -4,10 +4,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Work Orders</h2>
+<h2>Work Orders List</h2>
 
 <p>
     @Html.ActionLink("Print Work Order List", "Print")
+</p>
+<p>
+    @Html.ActionLink("View Active Work Order List", "ActiveWorkOrderIndex")
 </p>
 <table class="table">
     <tr>
