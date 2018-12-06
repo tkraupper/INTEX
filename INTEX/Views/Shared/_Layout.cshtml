@@ -10,9 +10,13 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-fixed-top navbar-inverse">
+
         <div class="container">
             <div class="navbar-header">
+                <a class="navbar-brand" href=@Url.Action("Index", "Home")>
+                    <img alt="Brand" src="~/Content/Images/Northwest LabsWhite.png" width="150px">
+                </a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -20,42 +24,43 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Northwest Labs", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse" id="navbarNavDropdown">
                 <ul class="nav navbar-nav">
                     <li class="nav-item">@Html.ActionLink("Home", "Index", "Home")</li>
                     <li class="nav-item">@Html.ActionLink("About", "About", "Home")</li>
                     <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             Customer Login
+                            <span class="caret"></span>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item">@Html.ActionLink("Customer Login", "Login", "CustomerPortal")</a>
-                            <br />
-                            <a class="dropdown-item">@Html.ActionLink("New Customer", "Create", "Home")</a>
-                        </div>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Customer Login", "Login", "Customer")</li>
+                            <li>@Html.ActionLink("New Customer", "Create", "Home")</li>
+                        </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             Employee Login
+                            <span class="caret"></span>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item">@Html.ActionLink("Seattle", "Login", "SeattlePortal")</a>
-                            <br />
-                            <a class="dropdown-item">@Html.ActionLink("Singapore", "Login", "SingaporePortal")</a>
-                        </div>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Seattle", "Login", "SeattlePortal")</li>
+                            <li>@Html.ActionLink("Singapore", "Login", "SingaporePortal")</li>
+                        </ul>
                     </li>
-                </ul>
+
             </div>
+
         </div>
+    </div>
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Northwest Laboratories LLC</p>
         </footer>
     </div>
 
