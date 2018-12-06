@@ -4,10 +4,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Work Orders</h2>
+<h2>Work Orders List</h2>
 
 <p>
     @Html.ActionLink("Print Work Order List", "Print")
+</p>
+<p>
+    @Html.ActionLink("View Active Work Order List", "ActiveWorkOrderIndex")
 </p>
 <table class="table">
     <tr>
@@ -40,7 +43,7 @@
             </td>
             <td>
                 @*This link redirects to an action that allows you to assign an LTNumber and CSC*@
-                @Html.ActionLink("Add Samples to Work Order", "SamplesCreate", new { id = item.WorkOrderID })
+                @Html.ActionLink("Add Samples to Work Order", "SamplesIndex", new { id = item.WorkOrderID })
             </td>
 
             <td>

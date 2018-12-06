@@ -9,7 +9,19 @@
 
 <div>
     <div class="breadcrumb">
-        <a href=@Url.Action("WorkOrderIndex")>Work Orders </a> / 
+        <a href=@Url.Action("WorkOrderIndex")>Work Orders</a> &nbsp;/&nbsp; <a href=@Url.Action("TestsIndex")>Tests</a> &nbsp;/&nbsp;<a href=@Url.Action("MaterialsIndex")>Materials</a> &nbsp;/&nbsp; <a href=@Url.Action("AssaysIndex")>Assays</a>
+    </div>
+
+    <div>
+        <p>
+            This is your Employee portal. Use any of the links above to navigate between the different functions this employee portal allows you to.
+        </p>
+        <h1>Tips:</h1>
+        <ul>
+            <li>The Work Orders link will allow you to view a list of work orders as well as filter it to see only those that have been received, but not yet assigned samples so you can complete that task</li>
+            <li>After adding samples to a work order you can add test tubes to each individual sample and then specific assays to teach test tube</li>
+            <li>You can go back at any time and edit any one of these tables with the Create, Edit, and Delete links in each one of the individual tables</li>
+        </ul>
     </div>
 </div>
 

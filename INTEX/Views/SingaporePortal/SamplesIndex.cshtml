@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Samples List</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "SamplesCreate")
 </p>
 <table class="table">
     <tr>
@@ -18,12 +18,6 @@
             @Html.DisplayNameFor(model => model.Compound.CompoundName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.WorkOrder.ConfirmationSentDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IndicatedWeight)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.ActualWeight)
         </th>
         <th>
@@ -31,9 +25,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.DateArrived)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RecievedBy)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.DateDue)
@@ -48,10 +39,7 @@
             @Html.DisplayNameFor(model => model.MTD)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SecondaryTestingApproval)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AnalysisReport)
+            Add Test Tube
         </th>
         <th></th>
     </tr>
@@ -65,12 +53,6 @@
             @Html.DisplayFor(modelItem => item.Compound.CompoundName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.WorkOrder.ConfirmationSentDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IndicatedWeight)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.ActualWeight)
         </td>
         <td>
@@ -78,9 +60,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DateArrived)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RecievedBy)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DateDue)
@@ -95,15 +74,12 @@
             @Html.DisplayFor(modelItem => item.MTD)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SecondaryTestingApproval)
+            @Html.ActionLink("Add Test Tube", "TestTubesIndex", new { id = item.CompoundSequenceCode }, new { cpk = item.LTNumber })
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.AnalysisReport)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "SamplesEdit", new { id=item.CompoundSequenceCode }, new { cpk=item.LTNumber}) |
+            @Html.ActionLink("Details", "SamplesDetails", new { id = item.CompoundSequenceCode }, new { cpk = item.LTNumber }) |
+            @Html.ActionLink("Delete", "SamplesDelete", new { id = item.CompoundSequenceCode }, new { cpk = item.LTNumber })
         </td>
     </tr>
 }

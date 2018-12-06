@@ -1,57 +1,46 @@
-﻿@model IEnumerable<INTEX.Models.TestTube>
+﻿@model IEnumerable<INTEX.Models.WorkOrder>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "ActiveWorkOrderIndex";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Work Orders!</h2>
+<h2>Active Work Orders</h2>
 
 <p>
-    @Html.ActionLink("Print Work Order List", "Print")
+    @Html.ActionLink("Back to All Work Orders", "WorkOrderIndex")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Sample.WorkOrder.WorkOrderID)
+            @Html.DisplayNameFor(model => model.WorkOrderID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Sample.WorkOrder.Customer.Name)
+            @Html.DisplayNameFor(model => model.Customer.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Sample.WorkOrder.ConfirmationSentDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sample.WorkOrder.Comments)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TestStatus)
+            @Html.DisplayNameFor(model => model.ConfirmationSentDate)
         </th>
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sample.WorkOrder.WorkOrderID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sample.WorkOrder.Customer.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sample.WorkOrder.ConfirmationSentDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sample.WorkOrder.Comments)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TestStatus)
-            </td>
-            <td>
-                @Html.ActionLink("Schedule", "ScheduleTest", new { id = item.Sample.WorkOrder.WorkOrderID }) |
-            </td>
-        </tr>
-    }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkOrderID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConfirmationSentDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.WorkOrderID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.WorkOrderID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.WorkOrderID })
+        </td>
+    </tr>
+}
 
 </table>
