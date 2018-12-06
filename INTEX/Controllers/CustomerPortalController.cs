@@ -56,17 +56,52 @@ namespace INTEX.Controllers
         //Start of Quote Request Section
         public ActionResult RequestQuote()
         {
+            ViewBag.cart = cart;
             return View();
         }
 
         public ActionResult SelectAssay()
         {
-            return View();
+            return View(db.Assays.ToList());
         }
 
-        public ActionResult SelectCompound()
+        public ActionResult SelectCompound(int id)
         {
+            ViewBag.assay = id;
+            ViewBag.LTNumber = new SelectList(db.Compounds, "LTNumber", "CompoundName");
             return View();//Some point in here needs a confirmation page/email.
+        }
+
+        [HttpPost]
+        public ActionResult SelectCompound(AssayRequest assayRequest, int id)
+        {
+            if (ModelState.IsValid)
+            {
+                assayRequest.AssayID = id;
+                assayRequest.Assay = db.Assays.Find(id);
+                assayRequest.Compound = db.Compounds.Find(assayRequest.LTNumber);
+                cart.Add(assayRequest);
+                return RedirectToAction("RequestQuote");
+            }
+            return View();
+        }
+    
+        [HttpPost]
+        public ActionResult QuoteRequest(QuoteRequest quoteRequest)
+        {
+            quoteRequest.CustomerID = currentCustomer;
+            if (quoteRequest.CustomerID != -1)
+            {
+                foreach (AssayRequest assayr in cart)
+                {
+                    assayr.QuoteRequestID = quoteRequest.QuoteRequestID;
+                    db.AssayRequests.Add(assayr);
+                }
+                db.QuoteRequests.Add(quoteRequest);
+                db.SaveChanges();
+                return View("Confirmation");//Add Confirmation View
+            }
+            return View("Index");
         }
         //End of Quote Request Section
 

@@ -478,6 +478,8 @@
     <Content Include="Views\WorkOrders\WorkOrderIndex.cshtml" />
     <Content Include="Views\CustomerPortal\PayBill.cshtml" />
     <Content Include="Views\CustomerPortal\GetReports.cshtml" />
+    <Content Include="Views\CustomerPortal\SelectAssay.cshtml" />
+    <Content Include="Views\CustomerPortal\SelectCompound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

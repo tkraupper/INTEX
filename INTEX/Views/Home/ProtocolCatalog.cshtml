@@ -15,9 +15,9 @@
         <th>
             @Html.DisplayNameFor(model => model.AssayDetails)
         </th>
-        @*<th>
-            Materials used in assay
-        </th>*@
+        <th>
+            Materials Used in assay
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.TimeEstimate)
         </th>
@@ -34,9 +34,16 @@
         <td>
             @Html.DisplayFor(modelItem => item.AssayDetails)
         </td>
-        @*<td>
-            How to link materials??
-        </td>*@
+        <td>
+            @foreach (var assaytest in item.AssayTest)
+            {
+                @:<p>Test: @assaytest.Test.TestDescription</p>
+                foreach (var testmat in assaytest.Test.TestMaterial)
+                {
+                    @:<p>Material: @testmat.Material.MaterialName Quantity: @testmat.QuantityUsed</p>
+                }
+            }
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.TimeEstimate)
         </td>
