@@ -1,3 +1,13 @@
 ﻿@model INTEX.Models.EmployeeCredentials
 
 <h2>Welcome to the Northwest Labs HQ Portal, @Model.Username!</h2>
+
+@Html.ActionLink("Fulfill Quote Requests", "PendingQuoteRequests")
+
+@Html.ActionLink("Price Completed Work Orders", "WONeedingPricing")
+
+@Html.ActionLink("Create Reports for Completed Work Orders", "WONeedingReports")
+
+@Html.ActionLink("Bill Customers", "WONeedingBilling")
+
+@Html.ActionLink("View Company Reports", "ViewReports")

@@ -23,5 +23,7 @@ namespace INTEX.Models
 
         [DisplayName("Base Price")]
         public decimal BasePrice { get; set; }
+
+        public virtual ICollection<TestMaterial> TestMaterial { get; set; }
     }
 }

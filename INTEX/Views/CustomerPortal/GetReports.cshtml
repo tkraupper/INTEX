@@ -1,0 +1,75 @@
+﻿@model IEnumerable<INTEX.Models.WorkOrder>
+
+@{
+    ViewBag.Title = "GetReports";
+}
+
+<ul class="breadcrumb">
+    <li><a href=@Url.Action("Index")>Home</a></li>
+    <li class="active">Reports</li>
+</ul>
+
+<h2>Completed Work Orders for @Model.First().Customer.Name</h2>
+
+
+<table class="table">
+    @*<tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactInfo.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PayInfo.Card)
+        </th>
+        <th>
+            Assays
+        </th>
+        <th>
+            Compounds
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+        <th>
+            Reports
+        </th>
+    </tr>*@
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                Work Order #@item.WorkOrderID
+            </td>
+            <td>
+                <p>Assays:</p>
+                @foreach (var s in item.Sample)
+                {
+                    @:<p>
+                        @s.Assay.AssayName
+                    @:</p>
+                }
+            </td>
+            <td>
+                <p>Samples:</p>
+                @foreach (var s in item.Sample)
+                {
+                    @:<p>
+                        @s.Compound.CompoundName
+                    @:</p>
+                }
+            </td>
+            <td>
+                <p>Comments:</p>
+                <p>@Html.DisplayFor(modelItem => item.Comments)</p>
+            </td>
+            <td>
+                @Html.ActionLink("Data Report", "DataReport") |
+                @Html.ActionLink("Summary Report", "SummaryReport")
+            </td>
+        </tr>
+    }
+
+</table>
