@@ -45,6 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -135,10 +139,6 @@
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
-    </Reference>
-    <Reference Include="Antlr3.Runtime">
-      <Private>True</Private>
-      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -301,7 +301,7 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\OldCustomer\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
@@ -310,11 +310,11 @@
     <Content Include="Views\SeattlePortal\Login.cshtml" />
     <Content Include="Views\SingaporePortal\Login.cshtml" />
     <Content Include="Views\CustomerPortal\Index.cshtml" />
-    <Content Include="Views\Assays\Create.cshtml" />
-    <Content Include="Views\Assays\Delete.cshtml" />
-    <Content Include="Views\Assays\Details.cshtml" />
-    <Content Include="Views\Assays\Edit.cshtml" />
-    <Content Include="Views\Assays\Index.cshtml" />
+    <Content Include="Views\Assays\AssaysCreate.cshtml" />
+    <Content Include="Views\Assays\AssaysDelete.cshtml" />
+    <Content Include="Views\Assays\AssaysDetails.cshtml" />
+    <Content Include="Views\Assays\AssaysEdit.cshtml" />
+    <Content Include="Views\Assays\AssaysIndex.cshtml" />
     <Content Include="Views\AssayRequests\Create.cshtml" />
     <Content Include="Views\AssayRequests\Delete.cshtml" />
     <Content Include="Views\AssayRequests\Details.cshtml" />
@@ -360,11 +360,11 @@
     <Content Include="Views\Invoices\Details.cshtml" />
     <Content Include="Views\Invoices\Edit.cshtml" />
     <Content Include="Views\Invoices\Index.cshtml" />
-    <Content Include="Views\Materials\Create.cshtml" />
-    <Content Include="Views\Materials\Delete.cshtml" />
-    <Content Include="Views\Materials\Details.cshtml" />
-    <Content Include="Views\Materials\Edit.cshtml" />
-    <Content Include="Views\Materials\Index.cshtml" />
+    <Content Include="Views\Materials\MaterialsCreate.cshtml" />
+    <Content Include="Views\Materials\MaterialsDelete.cshtml" />
+    <Content Include="Views\Materials\MaterialsDetails.cshtml" />
+    <Content Include="Views\Materials\MaterialsEdit.cshtml" />
+    <Content Include="Views\Materials\MaterialsIndex.cshtml" />
     <Content Include="Views\PayInfoes\Create.cshtml" />
     <Content Include="Views\PayInfoes\Delete.cshtml" />
     <Content Include="Views\PayInfoes\Details.cshtml" />
@@ -390,21 +390,21 @@
     <Content Include="Views\Samples\Details.cshtml" />
     <Content Include="Views\Samples\Edit.cshtml" />
     <Content Include="Views\Samples\Index.cshtml" />
-    <Content Include="Views\Tests\Create.cshtml" />
-    <Content Include="Views\Tests\Delete.cshtml" />
-    <Content Include="Views\Tests\Details.cshtml" />
-    <Content Include="Views\Tests\Edit.cshtml" />
-    <Content Include="Views\Tests\Index.cshtml" />
+    <Content Include="Views\Tests\TestsCreate.cshtml" />
+    <Content Include="Views\Tests\TestsDelete.cshtml" />
+    <Content Include="Views\Tests\TestsDetails.cshtml" />
+    <Content Include="Views\Tests\TestsEdit.cshtml" />
+    <Content Include="Views\Tests\TestsIndex.cshtml" />
     <Content Include="Views\TestMaterials\Create.cshtml" />
     <Content Include="Views\TestMaterials\Delete.cshtml" />
     <Content Include="Views\TestMaterials\Details.cshtml" />
     <Content Include="Views\TestMaterials\Edit.cshtml" />
     <Content Include="Views\TestMaterials\Index.cshtml" />
-    <Content Include="Views\TestTubes\Create.cshtml" />
-    <Content Include="Views\TestTubes\Delete.cshtml" />
-    <Content Include="Views\TestTubes\Details.cshtml" />
-    <Content Include="Views\TestTubes\Edit.cshtml" />
-    <Content Include="Views\TestTubes\Index.cshtml" />
+    <Content Include="Views\TestTubes\TestTubesCreate.cshtml" />
+    <Content Include="Views\TestTubes\TestTubesDelete.cshtml" />
+    <Content Include="Views\TestTubes\TestTubesDetails.cshtml" />
+    <Content Include="Views\TestTubes\TestTubesEdit.cshtml" />
+    <Content Include="Views\TestTubes\TestTubesIndex.cshtml" />
     <Content Include="Views\WorkOrders\Create.cshtml" />
     <Content Include="Views\WorkOrders\Delete.cshtml" />
     <Content Include="Views\WorkOrders\Details.cshtml" />
@@ -422,14 +422,7 @@
     <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\SeattlePortal\PendingQuoteRequests.cshtml" />
     <Content Include="Views\SeattlePortal\Quote.cshtml" />
-    <Content Include="Views\CustomerPortal\CurrentWorkOrders.cshtml" />
-    <Content Include="Views\CustomerPortal\CustomerAccount.cshtml" />
-    <Content Include="Views\CustomerPortal\CustomerBilling.cshtml" />
-    <Content Include="Views\CustomerPortal\CustomerRequestQuote.cshtml" />
-    <Content Include="Views\CustomerPortal\NewWorkOrder.cshtml" />
-    <Content Include="Views\CustomerPortal\NewWorkOrderForm.cshtml" />
-    <Content Include="Views\CustomerPortal\RequestQuote.cshtml" />
-    <Content Include="Views\CustomerPortal\ViewResults.cshtml" />
+    <Content Include="Views\SingaporePortal\ConfirmWorkOrder.cshtml" />
     <Content Include="Views\SingaporePortal\SamplesCreate.cshtml" />
     <Content Include="Views\SingaporePortal\SamplesDelete.cshtml" />
     <Content Include="Views\SingaporePortal\SamplesDetails.cshtml" />
@@ -441,7 +434,52 @@
     <Content Include="Views\SingaporePortal\WorkOrderEdit.cshtml" />
     <Content Include="Views\SingaporePortal\WorkOrderIndex.cshtml" />
     <Content Include="Views\SingaporePortal\ActiveWorkOrderIndex.cshtml" />
-    <Content Include="Views\SingaporePortal\ConfirmWorkOrder.cshtml" />
+    <Content Include="Views\SingaporePortal\TestTubesCreate.cshtml" />
+    <Content Include="Views\SingaporePortal\TestTubesDelete.cshtml" />
+    <Content Include="Views\SingaporePortal\TestTubesDetails.cshtml" />
+    <Content Include="Views\SingaporePortal\TestTubesEdit.cshtml" />
+    <Content Include="Views\SingaporePortal\TestTubesIndex.cshtml" />
+    <Content Include="Views\SingaporePortal\MaterialsCreate.cshtml" />
+    <Content Include="Views\SingaporePortal\MaterialsDelete.cshtml" />
+    <Content Include="Views\SingaporePortal\MaterialsDetails.cshtml" />
+    <Content Include="Views\SingaporePortal\MaterialsEdit.cshtml" />
+    <Content Include="Views\SingaporePortal\MaterialsIndex.cshtml" />
+    <Content Include="Views\SingaporePortal\TestsCreate.cshtml" />
+    <Content Include="Views\SingaporePortal\TestsDelete.cshtml" />
+    <Content Include="Views\SingaporePortal\TestsDetails.cshtml" />
+    <Content Include="Views\SingaporePortal\TestsEdit.cshtml" />
+    <Content Include="Views\SingaporePortal\TestsIndex.cshtml" />
+    <Content Include="Views\SingaporePortal\AssaysCreate.cshtml" />
+    <Content Include="Views\SingaporePortal\AssaysDelete.cshtml" />
+    <Content Include="Views\SingaporePortal\AssaysDetails.cshtml" />
+    <Content Include="Views\SingaporePortal\AssaysEdit.cshtml" />
+    <Content Include="Views\SingaporePortal\AssaysIndex.cshtml" />
+    <Content Include="Views\OldCustomer\CurrentWorkOrders.cshtml" />
+    <Content Include="Views\CustomerPortal\EditAccount.cshtml" />
+    <Content Include="Views\CustomerPortal\ViewBills.cshtml" />
+    <Content Include="Views\OldCustomer\CustomerRequestQuote.cshtml" />
+    <Content Include="Views\OldCustomer\NewWorkOrder.cshtml" />
+    <Content Include="Views\OldCustomer\NewWorkOrderForm.cshtml" />
+    <Content Include="Views\CustomerPortal\RequestQuote.cshtml" />
+    <Content Include="Views\OldCustomer\ViewResults.cshtml" />
+    <Content Include="Views\CustomerPortal\WorkOrderStatus.cshtml" />
+    <Content Include="Views\Samples\SamplesCreate.cshtml" />
+    <Content Include="Views\Samples\SamplesDelete.cshtml" />
+    <Content Include="Views\Samples\SamplesDetails.cshtml" />
+    <Content Include="Views\Samples\SamplesEdit.cshtml" />
+    <Content Include="Views\Samples\SamplesIndex.cshtml" />
+    <Content Include="Views\SeattlePortal\BillWorkOrder.cshtml" />
+    <Content Include="Views\SeattlePortal\PriceWorkOrder.cshtml" />
+    <Content Include="Views\SeattlePortal\ReportWorkOrder.cshtml" />
+    <Content Include="Views\SeattlePortal\ViewReports.cshtml" />
+    <Content Include="Views\SeattlePortal\WONeedingBilling.cshtml" />
+    <Content Include="Views\SeattlePortal\WONeedingPricing.cshtml" />
+    <Content Include="Views\SeattlePortal\WONeedingReports.cshtml" />
+    <Content Include="Views\WorkOrders\WorkOrderIndex.cshtml" />
+    <Content Include="Views\CustomerPortal\PayBill.cshtml" />
+    <Content Include="Views\CustomerPortal\GetReports.cshtml" />
+    <Content Include="Views\CustomerPortal\SelectAssay.cshtml" />
+    <Content Include="Views\CustomerPortal\SelectCompound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
