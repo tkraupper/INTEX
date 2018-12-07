@@ -9,7 +9,7 @@
     <li class="active">Request Quote</li>
 </ul>
 
-<h4>Assays currently on request:</h4>
+<h2>Assays currently on request:</h2>
 
 @foreach (var assayr in ViewBag.cart)
 {
@@ -27,12 +27,14 @@
 
 @{decimal highestimate = estimate * (decimal)1.25;}
 
-<p>Estimated Quote Range: $@estimate - $@highestimate</p>
-
-
-@Html.ActionLink("Add Assay to Request", "SelectAssay")
+<h3>Estimated Quote Range: $@estimate - $@highestimate</h3>
 <br />
-@Html.ActionLink("Submit Quote Request", "SubmitQuoteRequest")
+<br />
+
+@Html.ActionLink("Add Assay to Request", "SelectAssay", null, new { @class = "btn btn-primary btn-large center" })
+<br />
+<br />
+@Html.ActionLink("Submit Quote Request", "SubmitQuoteRequest", null, new { @class = "btn btn-primary btn-large center" })
 
 
 @*<h2>Request A Quote</h2>
