@@ -29,15 +29,10 @@
 
 <p>Estimated Quote Range: $@estimate - $@highestimate</p>
 
-<br />
-@Html.ActionLink("Add Assay to Request", "SelectAssay")
 
-<br /><br /><br />
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    <input type="submit" value="Submit Quote Request" class="btn btn-default" />
-}
+@Html.ActionLink("Add Assay to Request", "SelectAssay")
+<br />
+@Html.ActionLink("Submit Quote Request", "SubmitQuoteRequest")
 
 
 @*<h2>Request A Quote</h2>
