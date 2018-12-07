@@ -9,54 +9,60 @@
     <li class="active">Request Quote</li>
 </ul>
 
-<h2>Assays currently on request:</h2>
-
-@foreach (var assayr in ViewBag.cart)
+@if (ViewBag.cart.Count != 0)
 {
-    @:<p>@assayr.Assay.AssayName for @assayr.Compound.CompoundName</p>
-}
+    @:<h2>Assays currently on request:</h2>
 
-@{ decimal estimate = 0; }
-@foreach (var assayr in @ViewBag.cart)
-{
-    foreach (var assaytest in assayr.Assay.AssayTest)
+
+    foreach (var assayr in ViewBag.cart)
     {
-        estimate += assaytest.Test.BasePrice;
+        @:<p>@assayr.Assay.AssayName for @assayr.Compound.CompoundName</p>
     }
+
+    decimal estimate = 0;
+    foreach (var assayr in @ViewBag.cart)
+    {
+        foreach (var assaytest in assayr.Assay.AssayTest)
+        {
+            estimate += assaytest.Test.BasePrice;
+        }
+    }
+
+    decimal highestimate = estimate * (decimal)1.25;
+
+    <h3>Estimated Quote Range: $@estimate - $@highestimate</h3>
+    <br />
+    <br />
 }
-
-@{decimal highestimate = estimate * (decimal)1.25;}
-
-<h3>Estimated Quote Range: $@estimate - $@highestimate</h3>
-<br />
-<br />
 
 @Html.ActionLink("Add Assay to Request", "SelectAssay", null, new { @class = "btn btn-primary btn-large center" })
 <br />
 <br />
-@Html.ActionLink("Submit Quote Request", "SubmitQuoteRequest", null, new { @class = "btn btn-primary btn-large center" })
+@if (ViewBag.cart.Count != 0)
+{
+    @Html.ActionLink("Submit Quote Request", "SubmitQuoteRequest", null, new { @class = "btn btn-primary btn-large center" })
+}
 
+    @*<h2>Request A Quote</h2>
 
-@*<h2>Request A Quote</h2>
+        @*Form text needs to be sent with the customer ID as an email to the sales rep who owns the customer ID. When form is submitted,
+            a new "QuoteRequest" row must be created with "QuoteRequestID" and "CustomerID".*@
 
-    @*Form text needs to be sent with the customer ID as an email to the sales rep who owns the customer ID. When form is submitted,
-        a new "QuoteRequest" row must be created with "QuoteRequestID" and "CustomerID".*@
-
-@*<div class="card">
-        <div class="card-body" style="background-color: #f8f9fa">
-            <p>Please fill out the form below and submit, we will contact you within 14 days. If you have questions feel free to reach out at info@northwestlabs.com or 801-555-5555.</p>
+    @*<div class="card">
+            <div class="card-body" style="background-color: #f8f9fa">
+                <p>Please fill out the form below and submit, we will contact you within 14 days. If you have questions feel free to reach out at info@northwestlabs.com or 801-555-5555.</p>
+            </div>
         </div>
-    </div>
-    <br />
-    <div class="jumbotron">
-        @using (Html.BeginForm())
-        {*@
-@*<p>Compound Type:<br /> <input type="text" name="compound"><br>@Html.TextBoxFor(model => model.Name)</p>
-    <p>Expected Date: <br /><input type="text" name="expDate"><br>@Html.TextBoxFor(model => model.Email)</p>*@
+        <br />
+        <div class="jumbotron">
+            @using (Html.BeginForm())
+            {*@
+    @*<p>Compound Type:<br /> <input type="text" name="compound"><br>@Html.TextBoxFor(model => model.Name)</p>
+        <p>Expected Date: <br /><input type="text" name="expDate"><br>@Html.TextBoxFor(model => model.Email)</p>*@
 
 
-@*<p>Description and Supplementary Notes:<br /> @Html.TextArea("Body", null, new { cols = "200", rows = "10" })</p>
-            <input type="submit" value="Submit" />
-        }
-    </div>*@
+    @*<p>Description and Supplementary Notes:<br /> @Html.TextArea("Body", null, new { cols = "200", rows = "10" })</p>
+                <input type="submit" value="Submit" />
+            }
+        </div>*@
 
