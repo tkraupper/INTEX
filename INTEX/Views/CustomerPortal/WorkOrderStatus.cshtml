@@ -9,37 +9,30 @@
     <li class="active">Work Order Status</li>
 </ul>
 
-<h2>This view will show a work order and test statuses.</h2>
+<h2>Testing Status Report</h2>
 
-<table class="table">
+@foreach (var item in Model)
+{
+    <div class="jumbotron">
+        <h4>
+            Work Order #@item.WorkOrderID
+        </h4>
+        <br /><br />
+        @foreach (var s in item.Sample)
+        {
+            @:Testing Compound @s.Compound.CompoundName
+            @:with Assay @s.Assay.AssayName
+            @:<table class="table">
+                foreach (var t in s.TestTube)
+                {
+                    @:<tr>
+                        @:<td>
+                            @:@t.Test.TestDescription Test Status: @t.TestStatus
+                        @:</td>
+                    @:</tr>
+                }
+            @:</table>
+        }
+    </div>
+}
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                Work Order #@item.WorkOrderID
-            </td>
-            <td>
-                <p>Assays:</p>
-                <ul>
-                    @foreach (var s in item.Sample)
-                    {
-                        @:<li>
-                            @:<ul>
-                                @:Testing Compound @s.Compound.CompoundName
-                                @:with Assay @s.Assay.AssayName
-
-                                foreach (var t in s.TestTube)
-                                {
-                                @:
-                                @:<li>@t.Test.TestDescription Test Status: @t.TestStatus</li>
-                                }
-                            @:</ul>
-                        @:</li>
-                    }
-                </ul>
-            </td>
-        </tr>
-    }
-
-</table>
