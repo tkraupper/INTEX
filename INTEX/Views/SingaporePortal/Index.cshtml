@@ -4,24 +4,67 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="breadcrumb">
+    <a href=@Url.Action("WorkOrderIndex")>Work Orders</a> &nbsp;/&nbsp; <a href=@Url.Action("TestsIndex")>Tests</a> &nbsp;/&nbsp;<a href=@Url.Action("MaterialsIndex")>Materials</a> &nbsp;/&nbsp; <a href=@Url.Action("AssaysIndex")>Assays</a>
+</div>
 
-<h2>Welcome to the Northwest Labs Singapore Portal!</h2>
 
-<div>
-    <div class="breadcrumb">
-        <a href=@Url.Action("WorkOrderIndex")>Work Orders</a> &nbsp;/&nbsp; <a href=@Url.Action("TestsIndex")>Tests</a> &nbsp;/&nbsp;<a href=@Url.Action("MaterialsIndex")>Materials</a> &nbsp;/&nbsp; <a href=@Url.Action("AssaysIndex")>Assays</a>
+
+<div class="jumbotron col-md-12 jumbotron-bkgrdImg">
+    <h1>Welcome to the Northwest Labs Singapore Portal!</h1>
+    <br />
+    <div class="col-md-8">
+        <p class="lead">This is your Employee portal. Use any of the links above to navigate between the different functions this employee portal allows you to.</p>
+        <!--Link to a review of "northwest labs" (not. Could be reviews drawn from a database or a simple link to a yelp page-->
+        <p><a href="https://www.google.com/search?rlz=1C1CHBF_enUS777US777&ei=lakJXLjRH-iMjwS2j7GYCg&q=northwest+laboratory+seattle&oq=northwest+laboratory+seattle&gs_l=psy-ab.3..0i22i30l5.4624.6268..6372...0.0..0.400.1437.0j3j1j1j1......0....1..gws-wiz.......0j0i71j0i13j0i13i30.BglBp9W11cw#lrd=0x549041843459334b:0x9f1dfbfba6499f82,1,,," class="btn btn-primary btn-lg">See what others have said about us &raquo;</a></p>
     </div>
+    @*<div class="col-md-4">
+            <img class="HeaderImg" style="width:350px; height:auto;" src="~/Content/Images/TestTubes.jpeg" />
+        </div>**@
+</div>
 
-    <div>
-        <p>
-            This is your Employee portal. Use any of the links above to navigate between the different functions this employee portal allows you to.
-        </p>
-        <h1>Tips:</h1>
-        <ul>
-            <li>The Work Orders link will allow you to view a list of work orders as well as filter it to see only those that have been received, but not yet assigned samples so you can complete that task</li>
-            <li>After adding samples to a work order you can add test tubes to each individual sample and then specific assays to teach test tube</li>
-            <li>You can go back at any time and edit any one of these tables with the Create, Edit, and Delete links in each one of the individual tables</li>
-        </ul>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card" style="width: 30rem;">
+            <div class="card-body">
+                <img align="right" src="~/Content/Images/chemistry.png" width="50%" alt="Card image cap">
+                <h3 class="card-title">Work Orders</h3>
+                <p class="card-text">
+                    The Work Orders link will allow you to view a list of work orders
+                    as well as filter it to see only those that have been received,
+                    but not yet assigned samples so you can complete that task
+                </p>
+                <a href=@Url.Action("WorkOrderIndex") class="btn btn-primary">View List</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" style="width: 30rem;">
+            <div class="card-body">
+                <img align="right" src="~/Content/Images/atoms.png" width="50%" alt="Card image cap">
+                <h3 class="card-title">Add Test Tubes and Assays</h3>
+                <p class="card-text">
+                    After adding samples to a work order you can add test tubes to each
+                    individual sample and then specific assays to teach test tube
+                </p>
+                <a href=@Url.Action("TestsIndex") class="btn btn-primary">View Tests</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" style="width: 30rem;">
+            <div class="card-body">
+                <img align="right" src="~/Content/Images/invoice.png" width="50%" alt="Card image cap">
+                <h3 class="card-title">Edit Tables</h3>
+                <p class="card-text">
+                    You can go back at any time and edit any one of these tables with
+                    the Create, Edit, and Delete links in each one of the individual
+                    tables
+                </p>
+                @*<a href=@Url.Action("") class="btn btn-primary">Request Your Quote</a>*@
+            </div>
+        </div>
     </div>
 </div>
 
