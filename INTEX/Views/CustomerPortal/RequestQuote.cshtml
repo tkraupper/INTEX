@@ -31,13 +31,8 @@
 
 
 @Html.ActionLink("Add Assay to Request", "SelectAssay")
-
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    <input type="submit" value="Submit Quote Request" class="btn btn-default" />
-}
+<br />
+@Html.ActionLink("Submit Quote Request", "SubmitQuoteRequest")
 
 
 @*<h2>Request A Quote</h2>

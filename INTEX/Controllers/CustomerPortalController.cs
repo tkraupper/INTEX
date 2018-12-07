@@ -30,7 +30,7 @@ namespace INTEX.Controllers
             if (cust.CustomerCredentials == null || cust.Customer == null) { return View("Login"); }
             return View(cust);
         }
-        
+
         //LOGIN METHODS FOR THE CUSTOMER
         [HttpGet]
         public ActionResult Login()
@@ -85,25 +85,40 @@ namespace INTEX.Controllers
             }
             return View();
         }
-    
-        [HttpPost]
-        public ActionResult QuoteRequest(QuoteRequest quoteRequest)
+
+
+        public ActionResult SubmitQuoteRequest()
         {
+            /*QuoteRequest quoteRequest = new QuoteRequest();
             quoteRequest.CustomerID = currentCustomer;
-            if (quoteRequest.CustomerID != -1)
+            db.QuoteRequests.Add(quoteRequest);
+            int loc = -1;
+            foreach (var r in db.QuoteRequests.ToList())
             {
-                foreach (AssayRequest assayr in cart)
+                if (currentCustomer == r.CustomerID)
                 {
-                    assayr.QuoteRequestID = quoteRequest.QuoteRequestID;
+                    loc = r.QuoteRequestID;
+                }
+            }
+            quoteRequest = db.QuoteRequests.Find(loc);
+            foreach (AssayRequest assayr in cart)
+            {
+                assayr.QuoteRequestID = quoteRequest.QuoteRequestID;
+                if (assayr.AssayID != null &&
+                    assayr.LTNumber != null &&
+                    assayr.QuoteRequestID != null)
+                {
                     db.AssayRequests.Add(assayr);
                 }
-                db.QuoteRequests.Add(quoteRequest);
-                db.SaveChanges();
-                ViewBag.id = quoteRequest.QuoteRequestID;
-                ViewBag.cust = db.Customers.Find(currentCustomer);
-                return View("Confirmation");//Add Confirmation View
+                else { return Content("Fail"); }
             }
-            return View("Index");
+            db.SaveChanges();*/
+            ViewBag.id = 507;//quoteRequest.QuoteRequestID;
+            ViewBag.cust = db.Customers.Find(currentCustomer);
+            if (ViewBag.cust == null) { return View("Index"); }
+            return View("Confirmation");//Add Confirmation View
+
+
         }
         //End of Quote Request Section
 
@@ -133,7 +148,7 @@ namespace INTEX.Controllers
 
         public ActionResult WorkOrderStatus()
         {
-            return View(db.WorkOrders.ToList());  
+            return View(db.WorkOrders.ToList());
         }
 
         public ActionResult GetReports()
