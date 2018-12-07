@@ -113,6 +113,7 @@ namespace INTEX.Controllers
                 else { return Content("Fail"); }
             }
             db.SaveChanges();*/
+            cart.Clear();
             ViewBag.id = 507;//quoteRequest.QuoteRequestID;
             ViewBag.cust = db.Customers.Find(currentCustomer);
             if (ViewBag.cust == null) { return View("Index"); }
