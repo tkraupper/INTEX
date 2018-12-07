@@ -16,22 +16,23 @@
     @:<p>@assayr.Assay.AssayName for @assayr.Compound.CompoundName</p>
 }
 
-
-@Html.ActionLink("Add Assays to Request", "SelectAssay")
-
-
-@using (Html.BeginForm())
+@{ decimal estimate = 0; }
+@foreach (var assayr in @ViewBag.cart)
 {
-    @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Submit Quote Request" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
+    foreach (var assaytest in assayr.Assay.AssayTest)
+    {
+        estimate += assaytest.Test.BasePrice;
+    }
 }
+
+@{decimal highestimate = estimate * (decimal)1.25;}
+
+<p>Estimated Quote Range: $@estimate - $@highestimate</p>
+
+
+@Html.ActionLink("Add Assay to Request", "SelectAssay")
+<br />
+@Html.ActionLink("Submit Quote Request", "SubmitQuoteRequest")
 
 
 @*<h2>Request A Quote</h2>

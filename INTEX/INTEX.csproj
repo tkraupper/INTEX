@@ -385,11 +385,6 @@
     <Content Include="Views\QuoteRequests\Details.cshtml" />
     <Content Include="Views\QuoteRequests\Edit.cshtml" />
     <Content Include="Views\QuoteRequests\Index.cshtml" />
-    <Content Include="Views\Samples\Create.cshtml" />
-    <Content Include="Views\Samples\Delete.cshtml" />
-    <Content Include="Views\Samples\Details.cshtml" />
-    <Content Include="Views\Samples\Edit.cshtml" />
-    <Content Include="Views\Samples\Index.cshtml" />
     <Content Include="Views\Tests\TestsCreate.cshtml" />
     <Content Include="Views\Tests\TestsDelete.cshtml" />
     <Content Include="Views\Tests\TestsDetails.cshtml" />
@@ -409,7 +404,6 @@
     <Content Include="Views\WorkOrders\Delete.cshtml" />
     <Content Include="Views\WorkOrders\Details.cshtml" />
     <Content Include="Views\WorkOrders\Edit.cshtml" />
-    <Content Include="Views\WorkOrders\Index.cshtml" />
     <Content Include="Views\Payments\Create.cshtml" />
     <Content Include="Views\Payments\Delete.cshtml" />
     <Content Include="Views\Payments\Details.cshtml" />
@@ -480,6 +474,7 @@
     <Content Include="Views\CustomerPortal\GetReports.cshtml" />
     <Content Include="Views\CustomerPortal\SelectAssay.cshtml" />
     <Content Include="Views\CustomerPortal\SelectCompound.cshtml" />
+    <Content Include="Views\CustomerPortal\Confirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
