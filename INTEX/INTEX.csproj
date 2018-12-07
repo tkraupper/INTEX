@@ -480,6 +480,7 @@
     <Content Include="Views\CustomerPortal\GetReports.cshtml" />
     <Content Include="Views\CustomerPortal\SelectAssay.cshtml" />
     <Content Include="Views\CustomerPortal\SelectCompound.cshtml" />
+    <Content Include="Views\SingaporePortal\RecordTestResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
