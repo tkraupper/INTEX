@@ -15,10 +15,10 @@
 </table>
 
 
-<h2>Welcome @Html.DisplayFor(model => model.CustomerCredentials.Username) to your customer portal. </h2>
+<h2>Welcome @Html.DisplayFor(model => model.CustomerCredentials.Username) to your customer portal </h2>
 
 <div>
-    <h4>CustomerCredentials</h4>
+    <h4>Customer Credentials</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -29,13 +29,13 @@
             @Html.DisplayFor(model => model.CustomerCredentials.Username)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.CustomerCredentials.Password)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.CustomerCredentials.Password)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.Customer.ContactID)
