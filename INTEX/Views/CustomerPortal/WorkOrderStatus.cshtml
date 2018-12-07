@@ -9,73 +9,30 @@
     <li class="active">Work Order Status</li>
 </ul>
 
-<h2>This view will show a work order and test statuses.</h2>
+<h2>Testing Status Report</h2>
 
-@*<table class="table">
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                Work Order #@item.WorkOrderID
-            </td>
-            <td>
-                <p>Assays:</p>
-                <ul>
-                    @foreach (var s in item.Sample)
-                    {
-                        @:<li>
-                            @:<ul>
-                                @:Testing Compound @s.Compound.CompoundName
-                                @:with Assay @s.Assay.AssayName
-
-                                foreach (var t in s.TestTube)
-                                {
-                                @:
-                                @:<li>@t.Test.TestDescription Test Status: @t.TestStatus</li>
-                                }
-                            @:</ul>
-                        @:</li>
-                    }
-                </ul>
-            </td>
-        </tr>
-    }
-
-</table>*@
-
-
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.WorkOrderID)
-        </th>
-        <th>
-            Assays
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var s in item.Sample)
-    {
-        <tr>
-            <td>
-                @:Testing Compound @s.Compound.CompoundName
-                @:with Assay @s.Assay.AssayName
-            </td>
-            <td>
+@foreach (var item in Model)
+{
+    <div class="jumbotron">
+        <h4>
+            Work Order #@item.WorkOrderID
+        </h4>
+        <br /><br />
+        @foreach (var s in item.Sample)
+        {
+            @:Testing Compound @s.Compound.CompoundName
+            @:with Assay @s.Assay.AssayName
+            @:<table class="table">
                 foreach (var t in s.TestTube)
                 {
-                @:
-                @:<li>@t.Test.TestDescription Test Status: @t.TestStatus</li>
+                    @:<tr>
+                        @:<td>
+                            @:@t.Test.TestDescription Test Status: @t.TestStatus
+                        @:</td>
+                    @:</tr>
                 }
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "TestsEdit", new { id = item.TestID }) |
-                @Html.ActionLink("Details", "TestsDetails", new { id = item.TestID }) |
-                @Html.ActionLink("Delete", "TestsDelete", new { id = item.TestID })
-            </td>
-        </tr>
-    }
+            @:</table>
+        }
+    </div>
+}
 
-</table>
