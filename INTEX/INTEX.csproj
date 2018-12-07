@@ -256,17 +256,21 @@
     <Content Include="Content\Images\atoms.png" />
     <Content Include="Content\Images\chemistry.png" />
     <Content Include="Content\Images\customer-service.png" />
+    <Content Include="Content\Images\computer.jpg" />
     <Content Include="Content\Images\hans-reniers-746177-unsplash.jpg" />
     <Content Include="Content\Images\invoice.png" />
     <Content Include="Content\Images\LabGlass.jpeg" />
     <Content Include="Content\Images\LabTech.jpeg" />
+    <Content Include="Content\Images\MicroscopeCropped.jpg" />
     <Content Include="Content\Images\placeholder.png" />
     <Content Include="Content\Images\Seattle.jpg" />
+    <Content Include="Content\Images\SeattleCropped.jpg" />
     <Content Include="Content\Images\Sinapore.jpg" />
     <Content Include="Content\Images\MicroscopeInLab.jpeg" />
     <Content Include="Content\Images\Northwest LabsWhite.png" />
     <Content Include="Content\Images\Northwest Labs.png" />
     <Content Include="Content\Images\microscopes.jpg" />
+    <Content Include="Content\Images\SingaporeCropped.jpg" />
     <Content Include="Content\Images\TestTubes.jpeg" />
     <Content Include="Content\MyStyles.css" />
     <Content Include="favicon.ico" />
@@ -280,6 +284,8 @@
     </Content>
     <Content Include="bin\ApplicationInsights.config" />
     <Content Include="bin\INTEX.dll.config" />
+    <Content Include="Content\DataExample.pdf" />
+    <Content Include="Content\SummaryExample.pdf" />
     <None Include="Properties\PublishProfiles\intex2018 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

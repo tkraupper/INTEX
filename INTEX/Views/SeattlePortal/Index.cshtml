@@ -1,13 +1,69 @@
 ﻿@model INTEX.Models.EmployeeCredentials
 
-<h2>Welcome to the Northwest Labs HQ Portal, @Model.Username!</h2>
+<h2>_________________________________________</h2>
 
-@Html.ActionLink("Fulfill Quote Requests", "PendingQuoteRequests")
 
-@Html.ActionLink("Price Completed Work Orders", "WONeedingPricing")
+<div class="breadcrumb">
+    <a href=@Url.Action("PendingQuoteRequests")>Fulfill Quote Requests</a> &nbsp;/&nbsp; <a href=@Url.Action("WONeedingPricing")>Price Completed Work Orders</a> &nbsp;/&nbsp;<a href=@Url.Action("WONeedingReports")>Create Reports for Completed Work Orders</a> &nbsp;/&nbsp; <a href=@Url.Action("WONeedingBilling")>Bill Customers</a> &nbsp;/&nbsp; <a href=@Url.Action("ViewReports")>View Company Reports</a>
+</div>
 
-@Html.ActionLink("Create Reports for Completed Work Orders", "WONeedingReports")
 
-@Html.ActionLink("Bill Customers", "WONeedingBilling")
 
-@Html.ActionLink("View Company Reports", "ViewReports")
+<div class="jumbotron col-md-12 jumbotron-EmpPortal">
+    <h1>Welcome to the Northwest Labs HQ Portal, @Model.Username!</h1>
+    <br />
+    <div class="col-md-8">
+        <p class="lead">This is your Employee portal. Use any of the links above to navigate between the different functions this employee portal allows you to.</p>
+        <!--Link to a review of "northwest labs" (not. Could be reviews drawn from a database or a simple link to a yelp page-->
+       
+    </div>
+    @*<div class="col-md-4">
+            <img class="HeaderImg" style="width:350px; height:auto;" src="~/Content/Images/TestTubes.jpeg" />
+        </div>**@
+</div>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card" style="width: 30rem;">
+            <div class="card-body">
+                <img align="right" src="~/Content/Images/chemistry.png" width="50%" alt="Card image cap">
+                <h3 class="card-title">Work Orders</h3>
+                <p class="card-text">
+                    The Work Orders link will allow you to view a list of work orders
+                    as well as filter it to see only those that have been received,
+                    but not yet assigned samples so you can complete that task
+                </p>
+                <a href=@Url.Action("WorkOrderIndex") class="btn btn-primary">View List</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" style="width: 30rem;">
+            <div class="card-body">
+                <img align="right" src="~/Content/Images/atoms.png" width="50%" alt="Card image cap">
+                <h3 class="card-title">Add Test Tubes and Assays</h3>
+                <p class="card-text">
+                    After adding samples to a work order you can add test tubes to each
+                    individual sample and then specific assays to teach test tube
+                </p>
+                <a href=@Url.Action("TestsIndex") class="btn btn-primary">View Tests</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" style="width: 30rem;">
+            <div class="card-body">
+                <img align="right" src="~/Content/Images/invoice.png" width="50%" alt="Card image cap">
+                <h3 class="card-title">Edit Tables</h3>
+                <p class="card-text">
+                    You can go back at any time and edit any one of these tables with
+                    the Create, Edit, and Delete links in each one of the individual
+                    tables
+                </p>
+                @*<a href=@Url.Action("") class="btn btn-primary">Request Your Quote</a>*@
+            </div>
+        </div>
+    </div>
+</div>
+
