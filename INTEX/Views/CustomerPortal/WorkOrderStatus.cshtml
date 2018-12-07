@@ -11,7 +11,7 @@
 
 <h2>This view will show a work order and test statuses.</h2>
 
-<table class="table">
+@*<table class="table">
 
     @foreach (var item in Model)
     {
@@ -38,6 +38,42 @@
                         @:</li>
                     }
                 </ul>
+            </td>
+        </tr>
+    }
+
+</table>*@
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkOrderID)
+        </th>
+        <th>
+            Assays
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var s in item.Sample)
+    {
+        <tr>
+            <td>
+                @:Testing Compound @s.Compound.CompoundName
+                @:with Assay @s.Assay.AssayName
+            </td>
+            <td>
+                foreach (var t in s.TestTube)
+                {
+                @:
+                @:<li>@t.Test.TestDescription Test Status: @t.TestStatus</li>
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "TestsEdit", new { id = item.TestID }) |
+                @Html.ActionLink("Details", "TestsDetails", new { id = item.TestID }) |
+                @Html.ActionLink("Delete", "TestsDelete", new { id = item.TestID })
             </td>
         </tr>
     }

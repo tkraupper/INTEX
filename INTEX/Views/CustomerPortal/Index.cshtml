@@ -3,24 +3,75 @@
 @{
     ViewBag.Title = "Customer Portal";
 }
-<table style="width:85%">
-    <tr>
-        <th>@Html.ActionLink("Request A Quote", "RequestQuote") </th>
-        <th>@Html.ActionLink("See Quotes", "Quotes") </th>
-        <th>@Html.ActionLink("Status of Active Work Orders", "WorkOrderStatus") </th>
-        <th>@Html.ActionLink("View Test Results", "ViewResults") </th>
-        <th>@Html.ActionLink("Pay a Bill", "ViewBills") </th>
-        <th>@Html.ActionLink("Edit Account Information", "EditAccount") </th>
-    </tr>
-</table>
+
+<h2>_________________________________________</h2>
 
 
-<h2>Welcome @Html.DisplayFor(model => model.CustomerCredentials.Username) to your customer portal </h2>
+<div class="breadcrumb">
+    <a href=@Url.Action("RequestQuote")>Request A Quote</a> &nbsp;/&nbsp; <a href=@Url.Action("Quotes")>See Quotes</a> &nbsp;/&nbsp;<a href=@Url.Action("WorkOrderStatus")>Status of Active Work Orders</a> &nbsp;/&nbsp; <a href=@Url.Action("ViewResults")>View Test Results</a> &nbsp;/&nbsp; <a href=@Url.Action("ViewBills")>Pay a Bill</a> &nbsp;/&nbsp; <a href=@Url.Action("Edit Account Information")>Edit Account</a>
+</div>
+
+
+
+<div class="jumbotron col-md-12 jumbotron-Customer">
+    <h1>Welcome, @Html.DisplayFor(model => model.CustomerCredentials.Username) to your customer portal.</h1>
+    <br />
+    <div class="col-md-8">
+        <p class="lead">This is your Customer portal. Use any of the links above to navigate between the different functions this employee portal allows you to.</p>
+        <!--Link to a review of "northwest labs" (not. Could be reviews drawn from a database or a simple link to a yelp page-->
+
+    </div>
+    @*<div class="col-md-4">
+            <img class="HeaderImg" style="width:350px; height:auto;" src="~/Content/Images/TestTubes.jpeg" />
+        </div>**@
+</div>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card" style="width: 30rem;">
+            <div class="card-body">
+                <img align="right" src="~/Content/Images/chemistry.png" width="50%" alt="Card image cap">
+                <h3 class="card-title">Reports</h3>
+                <p class="card-text">
+                    You can download reports of all your requested tests.
+                </p>
+                <a href=@Url.Action("GetReports") class="btn btn-primary">Get Reports</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" style="width: 30rem;">
+            <div class="card-body">
+                <img align="right" src="~/Content/Images/atoms.png" width="50%" alt="Card image cap">
+                <h3 class="card-title">Test Status</h3>
+                <p class="card-text">
+                    You can view the status of your submitted tasks, download reports, and view results.
+                </p>
+                <a href=@Url.Action("TestsIndex") class="btn btn-primary">View Results</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" style="width: 30rem;">
+            <div class="card-body">
+                <img align="right" src="~/Content/Images/invoice.png" width="50%" alt="Card image cap">
+                <h3 class="card-title">Get Your Quote</h3>
+                <p class="card-text">
+                    Put in some basic information and receive a preliminary price quote.
+                </p>
+                <a href=@Url.Action("RequestQuote") class="btn btn-primary">Request Your Quote</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div>
-    <h4>Customer Credentials</h4>
+    <h4>CustomerCredentials</h4>
     <hr />
     <dl class="dl-horizontal">
+        <h4>CustomerCredentials</h4>
         <dt>
             @Html.DisplayNameFor(model => model.CustomerCredentials.Username)
         </dt>
@@ -29,13 +80,13 @@
             @Html.DisplayFor(model => model.CustomerCredentials.Username)
         </dd>
 
-        @*<dt>
+        <dt>
             @Html.DisplayNameFor(model => model.CustomerCredentials.Password)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.CustomerCredentials.Password)
-        </dd>*@
+        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Customer.ContactID)
@@ -51,3 +102,18 @@
     @Html.ActionLink("Edit", "Edit", new { id = Model.Customer.CustomerID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+
+@*<table style="width:85%">
+        <tr>
+            <th>@Html.ActionLink("Request A Quote", "RequestQuote") </th>
+            <th>@Html.ActionLink("See Quotes", "Quotes") </th>
+            <th>@Html.ActionLink("Status of Active Work Orders", "WorkOrderStatus") </th>
+            <th>@Html.ActionLink("View Test Results", "ViewResults") </th>
+            <th>@Html.ActionLink("Pay a Bill", "ViewBills") </th>
+            <th>@Html.ActionLink("Edit Account Information", "EditAccount") </th>
+        </tr>
+    </table>*@
+
+
+@*<h2>Welcome, @Html.DisplayFor(model => model.CustomerCredentials.Username) to your customer portal. </h2>*@
